@@ -11,6 +11,7 @@ use function Livewire\Volt\state;
 
 state([
     'name' => fn () => auth()->user()->name,
+    'avatar' => fn () => auth()->user()->avatar,
     'email' => fn () => auth()->user()->email
 ]);
 
@@ -19,6 +20,7 @@ $updateProfileInformation = function () {
 
     $validated = $this->validate([
         'name' => ['required', 'string', 'max:255'],
+        'avatar' => ['string', 'max:300'],
         'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique(User::class)->ignore($user->id)],
     ]);
 
@@ -49,7 +51,7 @@ $sendVerification = function () {
 
 ?>
 
-<section>
+<section class="w-100">
     <header>
         <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
             {{ __('Profile Information') }}
@@ -60,43 +62,58 @@ $sendVerification = function () {
         </p>
     </header>
 
-    <form wire:submit="updateProfileInformation" class="mt-6 space-y-6">
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input wire:model="name" id="name" name="name" type="text" class="mt-1 block w-full" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
-        </div>
-
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input wire:model="email" id="email" name="email" type="email" class="mt-1 block w-full" required autocomplete="username" />
-            <x-input-error class="mt-2" :messages="$errors->get('email')" />
-
-            @if (auth()->user() instanceof MustVerifyEmail && ! auth()->user()->hasVerifiedEmail())
+    <div class="row">
+        <div class="col-9">
+            <form wire:submit="updateProfileInformation" class="space-y-6 w-100">
                 <div>
-                    <p class="text-sm mt-2 text-gray-800 dark:text-gray-200">
-                        {{ __('Your email address is unverified.') }}
-
-                        <button wire:click.prevent="sendVerification" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
-                            {{ __('Click here to re-send the verification email.') }}
-                        </button>
-                    </p>
-
-                    @if (session('status') === 'verification-link-sent')
-                        <p class="mt-2 font-medium text-sm text-green-600 dark:text-green-400">
-                            {{ __('A new verification link has been sent to your email address.') }}
-                        </p>
+                    <x-input-label for="name" :value="__('Name')" />
+                    <x-text-input wire:model="name" id="name" name="name" type="text" class="mt-1 block w-full" required autofocus autocomplete="name" />
+                    <x-input-error class="mt-2" :messages="$errors->get('name')" />
+                </div>
+        
+                <div>
+                    <x-input-label for="avatar" :value="__('Avatar')" />
+                    <x-text-input wire:model="avatar" id="avatar" name="avatar" type="text" class="mt-1 block w-full" required autofocus autocomplete="avatar" />
+                    <x-input-error class="mt-2" :messages="$errors->get('avatar')" />
+                </div>
+        
+                <div>
+                    <x-input-label for="email" :value="__('Email')" />
+                    <x-text-input wire:model="email" id="email" name="email" type="email" class="mt-1 block w-full" required autocomplete="username" />
+                    <x-input-error class="mt-2" :messages="$errors->get('email')" />
+        
+                    @if (auth()->user() instanceof MustVerifyEmail && ! auth()->user()->hasVerifiedEmail())
+                        <div>
+                            <p class="text-sm mt-2 text-gray-800 dark:text-gray-200">
+                                {{ __('Your email address is unverified.') }}
+        
+                                <button wire:click.prevent="sendVerification" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                                    {{ __('Click here to re-send the verification email.') }}
+                                </button>
+                            </p>
+        
+                            @if (session('status') === 'verification-link-sent')
+                                <p class="mt-2 font-medium text-sm text-green-600 dark:text-green-400">
+                                    {{ __('A new verification link has been sent to your email address.') }}
+                                </p>
+                            @endif
+                        </div>
                     @endif
                 </div>
-            @endif
+        
+                <div class="flex items-center gap-4">
+                    <x-primary-button>{{ __('Save') }}</x-primary-button>
+        
+                    <x-action-message class="me-3" on="profile-updated">
+                        {{ __('Saved.') }}
+                    </x-action-message>
+                </div>
+            </form>
         </div>
-
-        <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
-
-            <x-action-message class="me-3" on="profile-updated">
-                {{ __('Saved.') }}
-            </x-action-message>
+        <div class="col-3">
+            <img class="w-100 rounded-full" src="{{ $avatar }}" alt="{{ auth()->user()->name }}">
         </div>
-    </form>
+        
+    </div>
+    
 </section>
