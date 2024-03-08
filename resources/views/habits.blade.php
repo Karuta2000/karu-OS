@@ -7,8 +7,7 @@
 
     <div class="py-6 container">
 
-        <button type="button" class="btn btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#habitModal">Přidat
-            habit</button>
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#habitModal"><i class="fa-solid fa-plus"></i></button>
 
         <div class="modal fade" id="habitModal" tabindex="-1" aria-labelledby="habitModal" aria-hidden="true">
             <div class="modal-dialog">

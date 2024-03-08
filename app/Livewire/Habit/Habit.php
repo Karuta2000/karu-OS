@@ -39,8 +39,7 @@ class Habit extends Component
                 'completed_at' => Carbon::today(),
             ]);
         }
-
-        $this->completed = !$this->completed;
+        $this->dispatch('updateHabitList');
     }
 
     public function deleteHabit(){

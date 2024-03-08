@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
@@ -31,5 +32,13 @@ class Habit extends Model
             $habit->description = '';
         });
     }
+    
 
+    public function completed(){
+        return $this->hasMany(HabitCompletition::class);
+    }
+
+    public function todayCompleted(){
+        return $this->completed()->whereDate('completed_at', Carbon::today())->exists();
+    }
 }

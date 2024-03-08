@@ -21,6 +21,8 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
+<script src="https://kit.fontawesome.com/23f40dcd3f.js" crossorigin="anonymous"></script>
+
 
 </head>
 
