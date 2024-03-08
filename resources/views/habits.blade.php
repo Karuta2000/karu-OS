@@ -5,15 +5,20 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-6 container">
 
+        <button type="button" class="btn btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#habitModal">Přidat
+            habit</button>
 
-        <div class="container mx-auto">
-            <div class="card p-4">
-                {{ __("You're logged in!") }}
+        <div class="modal fade" id="habitModal" tabindex="-1" aria-labelledby="habitModal" aria-hidden="true">
+            <div class="modal-dialog">
+                @livewire('habit-modal')
             </div>
-            
+        </div>
+
+
+        <div class="card p-4">
+            @livewire('habit.habit-list')
         </div>
     </div>
 </x-app-layout>
-
