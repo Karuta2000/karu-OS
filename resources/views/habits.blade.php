@@ -7,12 +7,17 @@
 
     <div class="py-6 container">
 
-        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#habitModal"><i class="fa-solid fa-plus"></i></button>
+        <div class="card mb-3">
+            <div class="card-body">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#habitModal"><i class="fa-solid fa-plus"></i></button>
+            </div>
+        </div>
+
 
         <div class="modal fade" id="habitModal" tabindex="-1" aria-labelledby="habitModal" aria-hidden="true">
-            <div class="modal-dialog">
-                @livewire('habit-modal')
-            </div>
+
+
+            @livewire('habit-modal')
         </div>
 
 

@@ -8,6 +8,7 @@ use App\Models\Habit;
 class HabitModal extends Component
 {
     public $name;
+    public $color = 'fff';
 
     public function render()
     {
@@ -17,14 +18,16 @@ class HabitModal extends Component
     public function saveHabit(){
 
         $this->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'color' => ['required', 'regex:/[abcdefABCDEF0-9]/'],
         ]);
 
         Habit::create([
             'name' => $this->name,
+            'HEXcolor' => $this->color,
         ]);
 
-        $this->reset(['name']);
+        $this->reset(['name', 'color']);
         $this->dispatch('updateHabitList');
 
 
