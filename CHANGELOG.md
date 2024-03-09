@@ -1,6 +1,18 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/laravel/compare/v10.3.2...10.x)
+## [Unreleased](https://github.com/laravel/laravel/compare/v0.1...main)
+
+## [v0.1](https://github.com/laravel/laravel/compare/v10.3.2...v0.1) - 2024-03-07
+
+### Karu OS Version 0.1 Release Notes
+
+Release Date: March 9, 2024
+
+### Features Added:
+
+- User: Introducing users. You can also have avatar.
+- Habits Tracker: Very simple habits with only functions to create, delete and complete them. You can also have many colors.
+- Dashboard: There is not much, only habits you already did
 
 ## [v10.3.2](https://github.com/laravel/laravel/compare/v10.3.1...v10.3.2) - 2024-01-04
 
