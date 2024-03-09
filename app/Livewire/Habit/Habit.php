@@ -13,15 +13,28 @@ class Habit extends Component
 
     public $habit;
 
+    public $id;
+
     public $completed;
+
+    protected $listeners = ["habitUpdated"];
 
     public function render()
     {
+        $this->habit = ModelsHabit::find($this->id);
         return view('livewire.habit.habit');
     }
 
+
+    public function habitUpdated($id){
+        if($id==$this->id){
+            $this->render();
+        }
+    }
+
     public function mount($habitId){
-        $this->habit = ModelsHabit::find($habitId);
+        $this->id = $habitId;
+        $this->habit = ModelsHabit::find($this->id);
         $this->completed = HabitCompletition::where('habit_id', $this->habit->id)
         ->whereDate('completed_at', Carbon::today())
         ->exists();
@@ -40,6 +53,10 @@ class Habit extends Component
             ]);
         }
         $this->dispatch('updateHabitList');
+    }
+
+    public function updateHabitModal(){
+        $this->dispatch('updateHabitModalValues', ['habit' => $this->habit]);
     }
 
     public function deleteHabit(){

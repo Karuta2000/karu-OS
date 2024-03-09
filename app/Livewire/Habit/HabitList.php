@@ -4,25 +4,21 @@ namespace App\Livewire\Habit;
 
 use Livewire\Component;
 use App\Models\Habit;
-use App\Models\HabitCompletition;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class HabitList extends Component
 {
     public $habits;
 
-    protected $listeners = ['updateHabitList' => 'refreshList'];
+    protected $listeners = ['updateHabitList' => '$refresh'];
 
-    public function refreshList(){
-        $this->habits = Habit::all();
+    public function mount(){
+        $this->habits = Habit::where('user_id', Auth::id())->get();
     }
 
     public function render()
     {
-
-        $this->refreshList();
-
-
+        $this->habits = Habit::where('user_id', Auth::id())->get();
         return view('livewire.habit.habit-list');
     }
 }
