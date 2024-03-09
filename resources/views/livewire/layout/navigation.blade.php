@@ -17,21 +17,32 @@ $logout = function (Logout $logout) {
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}" wire:navigate>
+                    <a class="text-decoration-none" href="{{ route('dashboard') }}" wire:navigate>
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
+                    <x-nav-link class="text-decoration-none px-2" :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Home') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('habits')" :active="request()->routeIs('habits')" wire:navigate>
+                    <x-nav-link class="text-decoration-none" :href="route('habits')" :active="request()->routeIs('habits')" wire:navigate>
                         {{ __('Habits') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link class="text-decoration-none" :href="route('gallery')" :active="request()->routeIs('gallery')" wire:navigate>
+                        {{ __('Gallery') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link class="text-decoration-none" :href="route('tasks')" :active="request()->routeIs('tasks')" wire:navigate>
+                        {{ __('Tasks') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -55,14 +66,19 @@ $logout = function (Logout $logout) {
                     </x-slot>
 
                     <x-slot name="content">
+
                         <x-dropdown-link :href="route('profile')" wire:navigate>
-                            {{ __('Profile') }}
+                            <i class="fa-solid fa-gear"></i> {{ __('Profile') }}
+                        </x-dropdown-link>
+
+                        <x-dropdown-link :href="route('profile_settings')" wire:navigate>
+                            <i class="fa-solid fa-gear"></i> {{ __('Profile settings') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
                         <button wire:click="logout" class="w-full text-start">
                             <x-dropdown-link>
-                                {{ __('Log Out') }}
+                                <i class="fa-solid fa-right-from-bracket"></i> {{ __('Log Out') }}
                             </x-dropdown-link>
                         </button>
                     </x-slot>
@@ -97,14 +113,14 @@ $logout = function (Logout $logout) {
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile')" wire:navigate>
-                    {{ __('Profile') }}
+                <x-responsive-nav-link :href="route('profile_settings')" wire:navigate>
+                    <i class="fa-solid fa-gear"></i> {{ __('Profile Settings') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->
                 <button wire:click="logout" class="w-full text-start">
                     <x-responsive-nav-link>
-                        {{ __('Log Out') }}
+                        <i class="fa-solid fa-right-from-bracket"></i> {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </button>
             </div>

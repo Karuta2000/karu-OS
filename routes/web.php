@@ -19,10 +19,19 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
+Route::view('profile_settings', 'profile_settings')
+    ->middleware(['auth'])
+    ->name('profile_settings');
+
+
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
 Route::view('habits', 'habits')->name('habits');
+
+Route::view('gallery', 'gallery')->name('gallery');
+
+Route::view('tasks', 'tasks')->name('tasks');
 
 require __DIR__.'/auth.php';
