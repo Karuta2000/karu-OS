@@ -1,12 +1,7 @@
-<?php
-use Carbon\Carbon;
-
-?>
-
 <x-app-layout>
-    <div class="container py-6">
-        <div class="card p-7 justify-content-center">
-            WIP
+    <div class="container">
+        <div class="p-7 justify-content-center">
+            <livewire:task.task-list />
         </div>
     </div>
 

@@ -5,7 +5,7 @@ use Carbon\Carbon;
 
 <x-app-layout>
     <div class="container py-6">
-        <div class="card p-7 justify-content-center">
+        <div class="card p-7 justify-content-center shadow-sm">
             <img class="w-50 rounded-full mx-auto" src="{{ Auth::user()->avatar }}" alt="{{ auth()->user()->name }}">
             <span class="h2 mx-auto mt-5">Welcome, {{ Auth()->user()->name }}</span>
             <hr>

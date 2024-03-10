@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="py-6 container">
 
-        <div class="card mb-3 p-4">
+        <div class="mb-3">
             @livewire('gallery.gallery')
         </div>
 
