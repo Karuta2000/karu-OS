@@ -20,6 +20,7 @@
 
 
         <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/gallery.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
@@ -31,7 +32,7 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-        <livewire:layout.navigation />
+        <livewire:layout.sidebar />
 
         <!-- Page Heading -->
         @if (isset($header))
@@ -43,8 +44,19 @@
         @endif
 
         <!-- Page Content -->
-        <main>
-            {{ $slot }}
+        <main class="h-full d-flex">
+            <div class="container-fluid h-100">
+                <div class="row h-100">
+                    <!-- Sidebar -->
+                    <div class="col-2 p-0">
+                        
+                    </div>
+                    <!-- Content Area -->
+                    <div class="col-10 p-0">
+                        {{ $slot }}
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>
