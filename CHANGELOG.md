@@ -1,6 +1,19 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/laravel/compare/v0.1...main)
+## [Unreleased](https://github.com/laravel/laravel/compare/v0.2...main)
+
+## [v0.2](https://github.com/laravel/laravel/compare/v0.1...v0.2) - 2024-03-10
+
+### Karu OS Version 0.2 Release Notes
+
+Release Date: March 10, 2024
+
+### Features Added:
+
+- Gallery: Now you can i your images. But only by url for now.
+- Tasks: You can also add tasks, through they can only be completed
+- Design improvements: Design was little bit improved but only some details
+- Profile page: user now has his own profile page, but in future it would contain some useful info
 
 ## [v0.1](https://github.com/laravel/laravel/compare/v10.3.2...v0.1) - 2024-03-07
 
