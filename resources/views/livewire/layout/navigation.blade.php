@@ -12,7 +12,7 @@ $logout = function (Logout $logout) {
 
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="px-5">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -26,6 +26,12 @@ $logout = function (Logout $logout) {
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link class="text-decoration-none px-2" :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Home') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link class="text-decoration-none" :href="route('projects')" :active="request()->routeIs('projects')" wire:navigate>
+                        {{ __('Projects') }}
                     </x-nav-link>
                 </div>
 

@@ -50,4 +50,19 @@ class User extends Authenticatable
     public function completedHabits(){
         return $this->hasMany(HabitCompletition::class);
     }
+
+    public function tasks(){
+        return $this->hasMany(Task::class);
+    }
+
+    public function habits(){
+        return $this->hasMany(Habit::class);
+    }
+    public function stats(){
+        $stats = [
+            'tasks' => $this->tasks->count(),
+        ];
+
+        return $stats;
+    }
 }

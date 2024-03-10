@@ -34,4 +34,6 @@ Route::view('gallery', 'gallery')->name('gallery');
 
 Route::view('tasks', 'tasks')->name('tasks');
 
+Route::view('projects', 'projects')->name('projects');
+
 require __DIR__.'/auth.php';
