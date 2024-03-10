@@ -43,7 +43,7 @@ class Habit extends Model
 
     public function todayCompleted()
     {
-        return $this->completed()->whereDate('completed_at', Carbon::today())->exists();
+        return $this->completed()->whereDate('completed_at', Carbon::today());
     }
 
     function isHexColorDark()
