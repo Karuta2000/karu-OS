@@ -1,5 +1,5 @@
 <div>
-    <div class="container">
+    <div>
         <div class="mb-4 card shadow-sm">
             <div class="card-header">
                 Add new image
@@ -28,7 +28,7 @@
         @foreach ($images as $image)
         <div class="col-2 px-3 my-3">
             <a href="{{ $image->url }}">
-                <img class="w-100 mx-auto shadow-sm gallery-image" src="{{ $image->url }}">
+                <img class="w-100 mx-auto shadow-sm clickable-card" src="{{ $image->url }}">
             </a>
         </div>
             

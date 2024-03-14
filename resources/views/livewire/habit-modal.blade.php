@@ -20,7 +20,7 @@
                     <label for="name" class=" col-form-label col-2">Color</label>
                     <div class="col-10">
                         <input type="text" class="form-control" max="6" min="6" id="color"
-                            wire:model='color'>
+                            wire:model='color'> 
                     </div>
 
                     @error('color')

@@ -12,6 +12,9 @@ class HabitList extends Component
 {
     public $habits;
 
+    public $name;
+    public $color = "#ffffff";
+
     public $mode = "complete";
 
     protected $listeners = ['updateHabitList' => '$refresh'];
@@ -45,6 +48,11 @@ class HabitList extends Component
                 ]);
             }
         }
+        else {
+            if($this->mode == "delete"){
+                Habit::find($id)->delete();
+            }
+        }
     }
 
     public function toggle()
@@ -65,5 +73,22 @@ class HabitList extends Component
 
     public function setMode($mode){
         $this->mode = $mode;
+    }
+
+    public function addHabit(){
+        
+        $this->validate([
+            'name' => 'required',
+            'color' => ['required', 'regex:/[abcdefABCDEF0-9]/'],
+        ]);
+
+        Habit::create([
+            'name' => $this->name,
+            'HEXcolor' => str_replace('#', '', $this->color),
+        ]);
+
+        $this->dispatch('updateHabitList');
+
+
     }
 }

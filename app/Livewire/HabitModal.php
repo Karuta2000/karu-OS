@@ -9,7 +9,7 @@ class HabitModal extends Component
 {
 
     public $habit;
-    public $name;
+    public $name = "test";
     public $color = 'ffffff';
     public $modalTitle = "Add new habit";
 
