@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Habit;
+namespace App\Livewire\Habits;
 
 use App\Models\Habit as ModelsHabit;
 use App\Models\HabitCompletition;
@@ -22,7 +22,7 @@ class Habit extends Component
     public function render()
     {
         $this->habit = ModelsHabit::find($this->id);
-        return view('livewire.habit.habit');
+        return view('livewire.habits.habit');
     }
 
 

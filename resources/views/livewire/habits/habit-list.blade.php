@@ -42,6 +42,22 @@
                             <span class="error">{{ $message }}</span>
                         @enderror
                     </div>
+
+                    <div class="mb-3 row">
+                        <label for="name" class=" col-form-label col-2">Project</label>
+                        <div class="col-10">
+                            <select class="form-select" aria-label="Default select example" wire:model='habitProject'>
+                                <option>Bez projektu</option>
+                                @foreach ($projects as $project)
+                                <option value="{{ $project->id }}">{{ $project->title }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+        
+                        @error('color')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
+                    </div>
                 </div>
             </div>
             <div class="col-6">
@@ -60,11 +76,12 @@
         <div class="row justify-content-left">
             @foreach ($habits as $habit)
                 <div class="col-md-2 mb-5">
-                    <div class="card"
+                    <div class="card clickable-card"
                         style="background-color: #{{ $habit->HEXcolor }}99; color: #{{ $habit->isHexColorDark() }}; opacity: {{ $habit->todayCompleted == '[]' ? 1 : 0.5 }}; cursor: pointer; height: 200px; width: 200px;"
                         wire:click='doAction({{ $habit->id }})'>
                         <div class="card-body d-flex justify-content-center align-items-center">
-                            {{ $habit->name }}
+                            
+                            <p>{{ $habit->name }}</p>
                         </div>
                     </div>
                 </div>

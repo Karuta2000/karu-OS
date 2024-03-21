@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Livewire\Project;
+namespace App\Livewire\Projects;
 
 use Livewire\Component;
 use App\Models\Project;
+use App\Models\TaskList;
 
 
 class ProjectList extends Component
@@ -16,7 +17,7 @@ class ProjectList extends Component
     public function render()
     {
         $this->projects = Project::all();
-        return view('livewire.project.project-list');
+        return view('livewire.projects.project-list');
     }
 
     public function mount(){
@@ -24,10 +25,16 @@ class ProjectList extends Component
     }
 
     public function addProject(){
-        Project::create([
+        $project = Project::create([
             'title' => $this->title,
             'image' => $this->image,
             'user_id' => auth()->user()->id,
+        ]);
+
+        TaskList::create([
+            'name' => $this->title . ' task list',
+            'user_id' => auth()->user()->id,
+            'project_id' => $project->id,
         ]);
 
         $this->reset(['title', 'image']);

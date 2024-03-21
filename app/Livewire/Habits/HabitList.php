@@ -1,18 +1,22 @@
 <?php
 
-namespace App\Livewire\Habit;
+namespace App\Livewire\Habits;
 
 use Livewire\Component;
 use App\Models\Habit;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Models\HabitCompletition;
+use App\Models\Project;
 
 class HabitList extends Component
 {
     public $habits;
 
     public $name;
+
+    public $projects;
+    public $habitProject;
     public $color = "#ffffff";
 
     public $mode = "complete";
@@ -22,12 +26,13 @@ class HabitList extends Component
     public function mount()
     {
         $this->habits = Habit::where('user_id', Auth::id())->get();
+        $this->projects = Project::where('user_id', Auth::id())->get();
     }
 
     public function render()
     {
         $this->habits = Habit::where('user_id', Auth::id())->get();
-        return view('livewire.habit.habit-list');
+        return view('livewire.habits.habit-list');
     }
 
     public function doAction($id)
@@ -85,6 +90,7 @@ class HabitList extends Component
         Habit::create([
             'name' => $this->name,
             'HEXcolor' => str_replace('#', '', $this->color),
+            'project_id' => $this->habitProject,
         ]);
 
         $this->dispatch('updateHabitList');

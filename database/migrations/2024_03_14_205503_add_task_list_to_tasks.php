@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->text("cover")->nullable();
+        Schema::table('tasks', function (Blueprint $table) {
+            $table->unsignedBigInteger('task_list_id')->nullable();
+            $table->foreign('task_list_id')->references('id')->on('task_lists')->onDelete('cascade');
         });
     }
 
@@ -21,8 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('cover');
+        Schema::table('tasks', function (Blueprint $table) {
+            $table->dropIfExists('task_list_id');
         });
     }
 };

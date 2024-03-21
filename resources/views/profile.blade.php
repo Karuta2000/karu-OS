@@ -4,10 +4,15 @@
         
     </div>
     <div class="profile-content bg-light">
-        <p class="h1">{{ Auth::user()->name }}</p>
-
+        <div class="profile-header d-flex">
+            <p class="h1">{{ Auth::user()->name }}</p>
+        </div>
+        
+        <div>
+            aaa
+        </div>
     </div>
     
-
+    
 
 </x-app-layout>

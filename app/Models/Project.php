@@ -15,4 +15,13 @@ class Project extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function task_list(){
+        return $this->hasOne(TaskList::class);
+    }
+
+    public function habits(){
+        return $this->hasMany(Habit::class);
+    }
+
 }
