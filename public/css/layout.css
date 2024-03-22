@@ -1,0 +1,15 @@
+.sidebar {
+    position: fixed;
+    width: 10%;
+    height: 100%;
+}
+
+.content {
+    position: fixed;
+    width: 90%;
+    height: 100%;
+    left: 10%;
+    overflow-x: auto;
+    overflow-x: hidden;
+    
+}

@@ -19,9 +19,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
-        <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/gallery.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/project.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
@@ -32,31 +30,13 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="min-h-screen bg-light bg-gradient">
         <livewire:layout.sidebar />
 
-        <!-- Page Heading -->
-        @if (isset($header))
-            <header class="bg-white dark:bg-gray-800 shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-        @endif
-
         <!-- Page Content -->
-        <main class="h-full d-flex">
-            <div class="container-fluid h-100">
-                <div class="row h-100">
-                    <!-- Sidebar -->
-                    <div class="col-2 p-0">
-                        
-                    </div>
-                    <!-- Content Area -->
-                    <div class="col-10 p-0">
-                        {{ $slot }}
-                    </div>
-                </div>
+        <main class="content">
+            <div class="h-100">
+                {{ $slot }}
             </div>
         </main>
     </div>

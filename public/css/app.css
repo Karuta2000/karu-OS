@@ -1,0 +1,12 @@
+@import url('gallery.css');
+@import url('project.css');
+@import url('profile.css');
+@import url('layout.css');
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    /* Add other font properties as needed */
+}
+
+
