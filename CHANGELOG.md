@@ -1,6 +1,29 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/laravel/compare/v0.2...main)
+## [Unreleased](https://github.com/laravel/laravel/compare/v0.3...main)
+
+## [v0.3](https://github.com/laravel/laravel/compare/v0.2...v0.3) - 2024-03-10
+
+### Karu OS Version 0.3 Release Notes
+
+Release Date: March 22, 2024
+
+### Changes and Additions:
+
+User Interface Revamp:
+
+- Navbar Removal: The navbar has been replaced with a sidebar, offering a more intuitive navigation experience.
+
+Introduction of Projects:
+
+- Project Management: Users can now create and manage projects within Karu OS.
+- Integration with Other Features: Projects can be connected with images, tasks, and habits, fostering better organization and collaboration.
+
+Page Updates:
+
+- Dashboard: The dashboard has been streamlined to exclusively display a list of projects, setting the stage for improved project management.
+- Habits Page: Enhancements have been made to the habits page, ensuring smoother interaction and tracking of habits.
+- Tasks Page: Tasks are now organized into task lists for each project, facilitating more efficient task management within the context of specific projects.
 
 ## [v0.2](https://github.com/laravel/laravel/compare/v0.1...v0.2) - 2024-03-10
 
