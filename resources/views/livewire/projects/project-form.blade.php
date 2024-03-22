@@ -2,25 +2,30 @@
 
 use App\Models\User;
 use App\Models\Project;
+use App\Models\TaskList;
 
 use function Livewire\Volt\state;
 
 state([
     'title' => '',
-    'image' => ''
+    'image' => '',
 ]);
 
-
-
 $addProject = function () {
-    Project::create([
-            'title' => $this->title,
-            'image' => $this->image,
-            'user_id' => auth()->user()->id,
-        ]);
+    $project = Project::create([
+        'title' => $this->title,
+        'image' => $this->image,
+        'user_id' => auth()->user()->id,
+    ]);
 
-        $this->reset(['title', 'image']);
-        $this->dispatch('updateProjectList');
+    TaskList::create([
+        'name' => $this->title . " task list",
+        'project_id' => $project->id,
+        'user_id' => auth()->user()->id,
+    ]);
+
+    $this->reset(['title', 'image']);
+    $this->dispatch('updateProjectList');
 };
 
 ?>
@@ -37,7 +42,7 @@ $addProject = function () {
                 <div class="col-10">
                     <input type="text" class="form-control" id="title" wire:model='title'>
                 </div>
-    
+
                 @error('title')
                     <span class="error">{{ $message }}</span>
                 @enderror
@@ -47,15 +52,15 @@ $addProject = function () {
                 <div class="col-10">
                     <input type="text" class="form-control" id="image" wire:model='image'>
                 </div>
-    
+
                 @error('image')
                     <span class="error">{{ $message }}</span>
                 @enderror
             </div>
             <button class="btn btn-primary" wire:click='addProject()'>Add project</button>
         </div>
-        
-        
+
+
     </div>
-    
+
 </section>

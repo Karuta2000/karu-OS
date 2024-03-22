@@ -3,6 +3,7 @@
 namespace App\Livewire\Task;
 
 use App\Models\Task;
+use App\Models\TaskList as taskListModel;
 use Livewire\Component;
 
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +14,13 @@ class TaskList extends Component
     public $title = "test";
 
     public $tasks;
+    public $taskLists;
+    public $taskList;
+
+    public function mount(){
+        $this->taskLists = TaskListModel::orderBy("created_at","desc")->get();
+        $this->taskList = $this->taskLists->first();
+    }
 
     public function render()
     {
@@ -30,7 +38,10 @@ class TaskList extends Component
         Task::create([
             'title' => $this->title,
             'user_id' => auth()->id(),
+            'task_list_id' => $this->taskList->id,
         ]);
+
+
 
         $this->reset(['title']);
     }

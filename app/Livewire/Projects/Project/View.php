@@ -2,10 +2,10 @@
 
 namespace App\Livewire\Projects\Project;
 
-use App\Models\Project as ModelsProject;
+use App\Models\Project;;
 use Livewire\Component;
 
-class Project extends Component
+class View extends Component
 {
 
     public $project;
@@ -16,11 +16,11 @@ class Project extends Component
 
     public function render()
     {
-        return view('livewire.project.project');
+        return view('livewire.projects.project.view');
     }
 
     public function mount(){
-        $this->project = ModelsProject::find($this->id);
+        $this->project = Project::find($this->id);
         $this->task_list = $this->project->task_list;
         $this->habits = $this->project->habits;
     }

@@ -24,4 +24,8 @@ class Project extends Model
         return $this->hasMany(Habit::class);
     }
 
+    public function images(){
+        return $this->hasMany(Image::class);
+    }
+
 }

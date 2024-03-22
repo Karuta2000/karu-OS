@@ -37,7 +37,7 @@ Route::view('tasks', 'tasks')->name('tasks');
 Route::view('projects', 'projects')->name('projects');
 
 Route::get('projects/{id}', function (string $id){
-    return view('projects.project', ["id" => $id]);
+    return view('projects.view', ["id" => $id]);
 })->name('project.show');
 
 

@@ -32,9 +32,9 @@ class ProjectList extends Component
         ]);
 
         TaskList::create([
-            'name' => $this->title . ' task list',
-            'user_id' => auth()->user()->id,
+            'name' => $this->title,
             'project_id' => $project->id,
+            'user_id' => auth()->user()->id,
         ]);
 
         $this->reset(['title', 'image']);

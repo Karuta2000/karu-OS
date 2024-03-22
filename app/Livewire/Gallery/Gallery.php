@@ -3,17 +3,25 @@
 namespace App\Livewire\Gallery;
 
 use App\Models\Image;
+use App\Models\Project;
 use Livewire\Component;
 
 class Gallery extends Component
 {
 
     public $url;
+    public $projects;
+    public $pickedProject;
 
-    public $images;
+
+
+    public function mount(){
+        $this->projects = Project::all();
+        $this->pickedProject = $this->projects->first()->id;
+    }
     public function render()
     {
-        $this->images = Image::where("user_id", auth()->user()->id)->get();
+        
         return view('livewire.gallery.gallery');
     }
 
@@ -21,7 +29,10 @@ class Gallery extends Component
         Image::create([
             'url' => $this->url,
             'user_id' => auth()->user()->id,
+            'project_id' => $this->pickedProject,
         ]);
         $this->reset('url');
+
+        $this->dispatch('addedNewImage');
     }
 }
