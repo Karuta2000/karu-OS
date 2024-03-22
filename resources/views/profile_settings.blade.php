@@ -20,6 +20,16 @@
             </div>
         </div>
 
+        <div class="card my-3 shadow-sm w-100">
+            <div class="card-header">
+                Profile information
+            </div>
+            <div class="card-body">
+                <livewire:profile.update-user-details-form />
+            </div>
+            
+        </div>
+
         <div class="card my-3 shadow-sm">
             <div class="card-header">
                 Password

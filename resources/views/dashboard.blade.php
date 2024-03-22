@@ -1,7 +1,3 @@
 <x-app-layout>
-    <div class="p-3">
-        <livewire-projects.project-list />
-    </div>
-
-
+    <livewire-projects.project-list />
 </x-app-layout>

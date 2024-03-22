@@ -13,11 +13,7 @@ class HabitList extends Component
 {
     public $habits;
 
-    public $name;
-
-    public $projects;
-    public $habitProject;
-    public $color = "#ffffff";
+    
 
     public $mode = "complete";
 
@@ -26,7 +22,7 @@ class HabitList extends Component
     public function mount()
     {
         $this->habits = Habit::where('user_id', Auth::id())->get();
-        $this->projects = Project::where('user_id', Auth::id())->get();
+        
     }
 
     public function render()
@@ -80,21 +76,5 @@ class HabitList extends Component
         $this->mode = $mode;
     }
 
-    public function addHabit(){
-        
-        $this->validate([
-            'name' => 'required',
-            'color' => ['required', 'regex:/[abcdefABCDEF0-9]/'],
-        ]);
-
-        Habit::create([
-            'name' => $this->name,
-            'HEXcolor' => str_replace('#', '', $this->color),
-            'project_id' => $this->habitProject,
-        ]);
-
-        $this->dispatch('updateHabitList');
-
-
-    }
+    
 }
