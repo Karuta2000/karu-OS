@@ -32,7 +32,7 @@ class Gallery extends Component
 
     private function setImages(){
         if($this->project){
-            $this->images = $this->project->images();      
+            $this->images = $this->project->images;      
         }
         else{
             $this->images = Image::where("user_id", auth()->user()->id)->get();

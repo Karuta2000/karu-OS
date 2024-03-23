@@ -18,7 +18,7 @@
         <div class="row justify-content-left">
             @foreach ($habits as $habit)
                 <div class="col-md-2 mb-5">
-                    <div class="card clickable-card"
+                    <div class="card clickable-card rounded"
                         style="background-color: #{{ $habit->HEXcolor }}99; color: #{{ $habit->isHexColorDark() }}; opacity: {{ $habit->todayCompleted == '[]' ? 1 : 0.5 }}; cursor: pointer; height: 200px; width: 200px;"
                         wire:click='doAction({{ $habit->id }})'>
                         <div class="card-body d-flex justify-content-center align-items-center">

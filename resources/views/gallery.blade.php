@@ -1,3 +1,5 @@
 <x-app-layout>
-    <livewire:gallery.gallery />
+    <div class="m-4">
+        <livewire:images.view />
+    </div>
 </x-app-layout>

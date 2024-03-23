@@ -1,7 +1,8 @@
-<x-app-layout>
-    <div class="p-3 mx-5">
+<x-app-layout class="m-4">
+    <div class="m-4">
         <livewire:task.task-list />
     </div>
+    
     
 
 </x-app-layout>

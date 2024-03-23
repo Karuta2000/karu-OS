@@ -1,4 +1,4 @@
-<div>
+<div class="m-4">
     <div class="row">
         <div class="col-4">
             <div class="project-image" style="background-image: url('{{ $project->image }}')"></div>
