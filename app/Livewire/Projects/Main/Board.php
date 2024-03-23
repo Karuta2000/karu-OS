@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Livewire\Projects;
+namespace App\Livewire\Projects\Main;
 
 use Livewire\Component;
 use App\Models\Project;
 use App\Models\TaskList;
 
 
-class ProjectList extends Component
+class Board extends Component
 {
 
     public $projects;
@@ -17,7 +17,7 @@ class ProjectList extends Component
     public function render()
     {
         $this->projects = Project::all();
-        return view('livewire.projects.project-list');
+        return view('livewire.projects.main.board');
     }
 
     public function mount(){
@@ -39,6 +39,8 @@ class ProjectList extends Component
 
         $this->reset(['title', 'image']);
     }
+
+    
     
     public function updateProjectList(){
         
