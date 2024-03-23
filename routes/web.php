@@ -19,7 +19,7 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::view('profile.profile_settings', 'profile_settings')
+Route::view('profile/profile_settings', 'profile.profile_settings')
     ->middleware(['auth'])
     ->name('profile_settings');
 
