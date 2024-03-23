@@ -1,6 +1,6 @@
 <x-app-layout class="m-4">
     <div class="m-4">
-        <livewire:task.task-list />
+        <livewire:tasks.main />
     </div>
     
     

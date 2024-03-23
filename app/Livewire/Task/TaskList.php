@@ -29,22 +29,7 @@ class TaskList extends Component
     }
 
 
-    public function add(){
-
-        $this->validate([
-            'title' => 'required',
-        ]);
-
-        Task::create([
-            'title' => $this->title,
-            'user_id' => auth()->id(),
-            'task_list_id' => $this->taskList->id,
-        ]);
-
-
-
-        $this->reset(['title']);
-    }
+    
 
 
     public function deleteTask($id){
