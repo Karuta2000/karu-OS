@@ -1,65 +1,50 @@
-
-<div class="sidebar bg-dark text-light">
-    <div class="justify-between px-3 py-4 flex flex-wrap">
-            <div class="mb-3 w-100">
-                <x-dropdown class="w-100" align="left" width="110">
-                    <x-slot name="trigger">
-                        <button class="px-3 transparent text-sm leading-4 font-medium rounded-md w-100">
-                            <div>
-                                <img class="h-20 w-20 rounded-full mx-auto mb-2" src="{{ auth()->user()->avatar }}" alt="{{ auth()->user()->name }}">
-                                <div class="h5" x-data="{{ json_encode(['name' => auth()->user()->name]) }}" x-text="name" x-on:profile-updated.window="name = $event.detail.name"></div>
-                            </div>
-                        </button>
-                    </x-slot>
-
-                    <x-slot name="content">
-
-                        <x-dropdown-link class="text-decoration-none new-full text-start" :href="route('user.profile', ['id' => auth()->id() ])" wire:navigate>
-                            <i class="fa-solid fa-user"></i> {{ __('Profile') }}
-                        </x-dropdown-link>
-
-                        <x-dropdown-link class="text-decoration-none new-full text-start" :href="route('user.settings')" wire:navigate>
-                            <i class="fa-solid fa-gear"></i> {{ __('Profile settings') }}
-                        </x-dropdown-link>
-
-                        <!-- Authentication -->
-                        <button wire:click="logout" class="w-full text-start">
-                            <x-dropdown-link class="text-decoration-none">
-                                <i class="fa-solid fa-right-from-bracket"></i> {{ __('Log Out') }}
-                            </x-dropdown-link>
-                        </button>
-                    </x-slot>
-                </x-dropdown>
-            </div>
-
-            <div class="mt-3 mb-3 ms-5 w-100 text-light">
-                <x-nav-link class="text-decoration-none text-center text-light" :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
-                    <i class="fa-solid fa-house me-1"></i> {{ __('Home') }}
-                </x-nav-link>
-            </div>
-
-            <div class="mb-3 ms-5 w-100">
-                <x-nav-link class="text-decoration-none text-light" :href="route('projects')" :active="request()->routeIs('projects')" wire:navigate>
-                    <i class="fa-solid fa-globe me-1"></i> {{ __('Projects') }}
-                </x-nav-link>
-            </div>
-            <div class="mb-3 ms-5 w-100">
-                <x-nav-link class="text-decoration-none text-light" :href="route('habits')" :active="request()->routeIs('habits')" wire:navigate>
-                    <i class="fa-solid fa-gamepad me-1"></i> {{ __('Habits') }}
-                </x-nav-link>
-            </div>
-            <div class="mb-3 ms-5 w-100">
-                <x-nav-link class="text-decoration-none text-light" :href="route('gallery')" :active="request()->routeIs('gallery')" wire:navigate>
-                    <i class="fa-solid fa-image me-1"></i> {{ __('Gallery') }}
-                </x-nav-link>
-            </div>
-            <div class="mb-3 ms-5 w-100">
-                <x-nav-link class="text-decoration-none text-light" :href="route('tasks')" :active="request()->routeIs('tasks')" wire:navigate>
-                    <i class="fa-solid fa-list-check me-1"></i> {{ __('Tasks') }}
-                </x-nav-link>
-            </div>
-
-            
-
+<div class="sidebar bg-black bg-gradient text-light shadow py-3">
+    <div class="mx-auto">
+        <div class="dropend mx-auto text-center">
+            <button class=" mx-auto px-3" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <div class="sidebar-avatar mx-auto" style="background-image: url('{{ auth()->user()->avatar }}')">
+                </div>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{ route('user.profile', ['id' => auth()->id()]) }}" wire:navigate><i class="fa-solid fa-user me-1"></i> {{ auth()->user()->name }}</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{{ route('user.settings') }}"><i class="fa-solid fa-gear me-1"></i> Profile settings</a></li>
+                <li><a class="dropdown-item" href="#" wire:click='logout'><i class="fa-solid fa-right-from-bracket me-1"></i> Logout</a></li>
+            </ul>
         </div>
+
+        <div class="nav flex-column py-3">
+            <div class="p-1 text-center nav-item">
+                <a class="h4 w-75 p-3 rounded mx-auto nav-link {{ Request::routeIs('dashboard') ? 'active-sidebar-link' : 'sidebar-link text-light' }}"
+                    href="{{ route('dashboard') }}">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+            </div>
+            <div class="p-1 text-center nav-item">
+                <a class="h4 w-75 p-3 rounded mx-auto nav-link {{ Request::routeIs('projects') ? 'active-sidebar-link' : 'sidebar-link text-light' }}"
+                    href="{{ route('projects') }}">
+                    <i class="fa-solid fa-globe"></i>
+                </a>
+            </div>
+            <div class="p-1 text-center nav-item">
+                <a class="h4 w-75 p-3 rounded mx-auto nav-link {{ Request::routeIs('habits') ? 'active-sidebar-link' : 'sidebar-link text-light' }}"
+                    href="{{ route('habits') }}">
+                    <i class="fa-solid fa-gamepad"></i>
+                </a>
+            </div>
+            <div class="p-1 text-center nav-item">
+                <a class="h4 w-75 p-3 rounded mx-auto nav-link {{ Request::routeIs('gallery') ? 'active-sidebar-link' : 'sidebar-link text-light' }}"
+                    href="{{ route('gallery') }}">
+                    <i class="fa-solid fa-image"></i>
+                </a>
+            </div>
+            <div class="p-1 text-center nav-item">
+                <a class="h4 w-75 p-3 rounded mx-auto nav-link {{ Request::routeIs('tasks') ? 'active-sidebar-link' : 'sidebar-link text-light' }}"
+                    href="{{ route('tasks') }}">
+                    <i class="fa-solid fa-list-check"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
