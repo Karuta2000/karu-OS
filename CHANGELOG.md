@@ -1,6 +1,41 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/laravel/compare/v0.3...main)
+## [Unreleased](https://github.com/laravel/laravel/compare/v0.4...main)
+
+## [v0.4](https://github.com/laravel/laravel/compare/v0.3...v0.4) - 2024-03-23
+
+### Karu OS Version 0.4 Release Notes
+
+Release Date: March 23, 2024
+
+Improved Sidebar:
+
+- The sidebar has undergone enhancements, providing a more polished and efficient navigation experience.
+
+Modal Integration for Adding Items:
+
+- Users can now add habits, tasks, images, and projects via modal dialogs, streamlining the process and enhancing user interaction.
+
+File Structure Optimization:
+
+- The file structure has been optimized, resulting in improved organization and efficiency. Redundant or outdated files have been removed, ensuring a cleaner system.
+
+Revamped Settings:
+
+- Expanded Settings Sections: Settings have been revamped and divided into five distinct parts, enhancing user control and customization.
+  
+- Additional User Details: Users can now input additional details such as birthday, sex, and bio, enriching their profile information.
+  
+- Profile Integration: New user details are seamlessly integrated into user profiles, providing a more comprehensive user experience.
+  
+
+Design Adjustments:
+
+- Further adjustments have been made to the design, refining the visual aesthetics and usability of the platform.
+
+Welcome Page Update:
+
+- The welcome page has been updated, offering a refreshed introduction to the platform and its features.
 
 ## [v0.3](https://github.com/laravel/laravel/compare/v0.2...v0.3) - 2024-03-10
 
