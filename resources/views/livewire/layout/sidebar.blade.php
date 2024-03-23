@@ -14,11 +14,11 @@
 
                     <x-slot name="content">
 
-                        <x-dropdown-link class="text-decoration-none new-full text-start" :href="route('profile')" wire:navigate>
+                        <x-dropdown-link class="text-decoration-none new-full text-start" :href="route('user.profile', ['id' => auth()->id() ])" wire:navigate>
                             <i class="fa-solid fa-user"></i> {{ __('Profile') }}
                         </x-dropdown-link>
 
-                        <x-dropdown-link class="text-decoration-none new-full text-start" :href="route('profile.settings')" wire:navigate>
+                        <x-dropdown-link class="text-decoration-none new-full text-start" :href="route('user.settings')" wire:navigate>
                             <i class="fa-solid fa-gear"></i> {{ __('Profile settings') }}
                         </x-dropdown-link>
 

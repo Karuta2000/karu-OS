@@ -21,10 +21,10 @@ Route::view('dashboard', 'dashboard')
 
 Route::view('profile/settings', 'profile.settings')
     ->middleware(['auth'])
-    ->name('profile.settings');
+    ->name('user.settings');
 
 
-Route::view('profile/profile', 'profile.profile')
+Route::view('user/profile', 'profile.profile')
     ->middleware(['auth'])
     ->name('profile');
 
@@ -36,9 +36,13 @@ Route::view('tasks', 'tasks')->name('tasks');
 
 Route::view('projects/project-list', 'projects.project-list')->name('projects');
 
-Route::get('projects/{id}', function (string $id){
+Route::get('project/{id}', function (string $id){
     return view('projects.view', ["id" => $id]);
 })->name('project.show');
 
+
+Route::get('user/{id}', function (string $id){
+    return view('profile.profile', ["id" => $id]);
+})->name('user.profile');
 
 require __DIR__.'/auth.php';
