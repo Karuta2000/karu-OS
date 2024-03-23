@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">karu OS</a>
+        <a class="navbar-brand" href="#">
+            <img src="{{ asset('images/icon.png')}}" alt="Bootstrap" width="40" height="40">
+          </a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             @auth
                 <li class="nav-item">
@@ -19,6 +21,7 @@
 
 
             @endauth
+
 
         </ul>
     </div>

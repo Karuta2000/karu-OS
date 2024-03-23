@@ -19,9 +19,9 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::view('profile/profile_settings', 'profile.profile_settings')
+Route::view('profile/settings', 'profile.settings')
     ->middleware(['auth'])
-    ->name('profile_settings');
+    ->name('profile.settings');
 
 
 Route::view('profile/profile', 'profile.profile')

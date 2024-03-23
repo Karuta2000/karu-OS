@@ -1,14 +1,3 @@
-<?php
-
-use App\Livewire\Actions\Logout;
-
-$logout = function (Logout $logout) {
-    $logout();
-
-    $this->redirect('/', navigate: true);
-};
-
-?>
 
 <div class="sidebar bg-dark text-light">
     <div class="justify-between px-3 py-4 flex flex-wrap">
@@ -29,7 +18,7 @@ $logout = function (Logout $logout) {
                             <i class="fa-solid fa-user"></i> {{ __('Profile') }}
                         </x-dropdown-link>
 
-                        <x-dropdown-link class="text-decoration-none new-full text-start" :href="route('profile_settings')" wire:navigate>
+                        <x-dropdown-link class="text-decoration-none new-full text-start" :href="route('profile.settings')" wire:navigate>
                             <i class="fa-solid fa-gear"></i> {{ __('Profile settings') }}
                         </x-dropdown-link>
 
