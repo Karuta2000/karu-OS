@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\UserDetail;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
@@ -34,6 +35,10 @@ $register = function () {
     event(new Registered($user = User::create($validated)));
 
     Auth::login($user);
+
+    UserDetail::create([
+        'user_id' => $user->id
+    ]);
 
     $this->redirect(RouteServiceProvider::HOME, navigate: true);
 };

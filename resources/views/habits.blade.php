@@ -1,6 +1,5 @@
 <x-app-layout>
-    <div class="py-6 container">
-
-        @livewire('habit.habit-list')
+    <div class="m-4">
+    <livewire:habits.habit-list />
     </div>
 </x-app-layout>

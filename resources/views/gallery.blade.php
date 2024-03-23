@@ -1,12 +1,5 @@
 <x-app-layout>
-    <div class="py-6 container">
-
-        <div class="mb-3">
-            @livewire('gallery.gallery')
-        </div>
-
-
-        
-        
+    <div class="m-4">
+        <livewire:images.view />
     </div>
 </x-app-layout>

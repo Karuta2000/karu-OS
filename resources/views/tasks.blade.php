@@ -1,8 +1,8 @@
-<x-app-layout>
-    <div class="container">
-        <div class="p-7 justify-content-center">
-            <livewire:task.task-list />
-        </div>
+<x-app-layout class="m-4">
+    <div class="m-4">
+        <livewire:tasks.main />
     </div>
+    
+    
 
 </x-app-layout>

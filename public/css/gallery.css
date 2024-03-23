@@ -1,0 +1,11 @@
+.clickable-card {
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.clickable-card:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+

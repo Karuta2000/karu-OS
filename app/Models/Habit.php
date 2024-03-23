@@ -13,7 +13,7 @@ class Habit extends Model
 
 
     protected $fillable = [
-        'name', 'description', 'user_id', 'HEXcolor'
+        'name', 'description', 'user_id', 'HEXcolor', 'project_id'
     ];
 
     public function user()
@@ -43,7 +43,7 @@ class Habit extends Model
 
     public function todayCompleted()
     {
-        return $this->completed()->whereDate('completed_at', Carbon::today())->exists();
+        return $this->completed()->whereDate('completed_at', Carbon::today());
     }
 
     function isHexColorDark()
@@ -67,5 +67,10 @@ class Habit extends Model
         } else {
             return '000000';
         }
+    }
+
+
+    public function project(){
+        return $this->belongsTo(Project::class);
     }
 }
