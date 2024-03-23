@@ -45,28 +45,28 @@ $logout = function (Logout $logout) {
 
             <div class="mt-3 mb-3 ms-5 w-100 text-light">
                 <x-nav-link class="text-decoration-none text-center text-light" :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
-                    {{ __('Home') }}
+                    <i class="fa-solid fa-house me-1"></i> {{ __('Home') }}
                 </x-nav-link>
             </div>
 
             <div class="mb-3 ms-5 w-100">
                 <x-nav-link class="text-decoration-none text-light" :href="route('projects')" :active="request()->routeIs('projects')" wire:navigate>
-                    {{ __('Projects') }}
+                    <i class="fa-solid fa-globe me-1"></i> {{ __('Projects') }}
                 </x-nav-link>
             </div>
             <div class="mb-3 ms-5 w-100">
                 <x-nav-link class="text-decoration-none text-light" :href="route('habits')" :active="request()->routeIs('habits')" wire:navigate>
-                    {{ __('Habits') }}
+                    <i class="fa-solid fa-gamepad me-1"></i> {{ __('Habits') }}
                 </x-nav-link>
             </div>
             <div class="mb-3 ms-5 w-100">
                 <x-nav-link class="text-decoration-none text-light" :href="route('gallery')" :active="request()->routeIs('gallery')" wire:navigate>
-                    {{ __('Gallery') }}
+                    <i class="fa-solid fa-image me-1"></i> {{ __('Gallery') }}
                 </x-nav-link>
             </div>
             <div class="mb-3 ms-5 w-100">
                 <x-nav-link class="text-decoration-none text-light" :href="route('tasks')" :active="request()->routeIs('tasks')" wire:navigate>
-                    {{ __('Tasks') }}
+                    <i class="fa-solid fa-list-check me-1"></i> {{ __('Tasks') }}
                 </x-nav-link>
             </div>
 
