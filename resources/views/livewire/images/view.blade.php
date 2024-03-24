@@ -20,6 +20,8 @@
 
         </div>
     </div>
+
+    
     <livewire:images.gallery id="{{}}">
 
 </div>

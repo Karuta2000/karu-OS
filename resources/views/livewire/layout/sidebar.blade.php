@@ -3,7 +3,7 @@
         <div class="dropend mx-auto text-center">
             <button class=" mx-auto px-3" type="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                <div class="sidebar-avatar mx-auto" style="background-image: url('{{ auth()->user()->avatar }}')">
+                <div class="sidebar-avatar mx-auto" style="background-image: url('{{ $avatar }}')">
                 </div>
             </button>
             <ul class="dropdown-menu">
