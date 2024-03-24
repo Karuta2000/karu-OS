@@ -49,8 +49,7 @@ new class extends Component {
         </div>
 
         <div class="btn-group">
-            
-
+        
 
             <button type="button" class="btn btn-danger" wire:click="deleteImage()"><i
                     class="fa-solid fa-trash"></i></button>
