@@ -47,6 +47,12 @@
                     <i class="fa-solid fa-list-check"></i>
                 </a>
             </div>
+            <div class="p-1 text-center nav-item">
+                <a class="h4 w-75 p-3 rounded mx-auto nav-link {{ Request::routeIs('notes') ? 'active-sidebar-link' : 'sidebar-link text-light' }}"
+                    href="{{ route('notes') }}">
+                    <i class="fa-solid fa-note-sticky"></i>
+                </a>
+            </div>
         </div>
     </div>
 </div>

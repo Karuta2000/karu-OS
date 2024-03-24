@@ -17,6 +17,7 @@
             <label for="url" class=" col-form-label col-2">Project </label>
             <div class="col-10">
                 <select class="form-select" aria-label="Default select example" wire:model='pickedProject'>
+                    
                     @foreach ($projects as $project)
                     
                         <option value="{{ $project->id }}">{{ $project->title }}</option>

@@ -39,6 +39,8 @@ Route::view('gallery', 'gallery')->name('gallery');
 
 Route::view('tasks', 'tasks')->name('tasks');
 
+Route::view('notes', 'notes')->name('notes');
+
 Route::view('projects/project-list', 'projects.project-list')->name('projects');
 
 Route::get('project/{id}', function (string $id){
