@@ -28,6 +28,9 @@ Route::view('user/profile', 'profile.profile')
     ->middleware(['auth'])
     ->name('profile');
 
+    
+Route::view('app/settings', 'app.settings')->name('app.settings');
+
 Route::view('habits', 'habits')->name('habits');
 
 Route::view('gallery', 'gallery')->name('gallery');

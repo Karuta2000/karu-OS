@@ -9,7 +9,9 @@
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{{ route('user.profile', ['id' => auth()->id()]) }}" wire:navigate><i class="fa-solid fa-user me-1"></i> {{ auth()->user()->name }}</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="{{ route('user.settings') }}"><i class="fa-solid fa-gear me-1"></i> Profile settings</a></li>
+                <li><a class="dropdown-item" href="{{ route('user.settings') }}"><i class="fa-solid fa-user-gear me-1"></i> Profile settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{{ route('app.settings') }}"><i class="fa-solid fa-gears me-1"></i> App settings</a></li>
                 <li><a class="dropdown-item" href="#" wire:click='logout'><i class="fa-solid fa-right-from-bracket me-1"></i> Logout</a></li>
             </ul>
         </div>
