@@ -9,11 +9,16 @@ use Livewire\Component;
 class Gallery extends Component
 {
 
+    public $test;
     public $images;
 
     public $project;
 
-    protected $listeners = ['addedNewImage'];
+    public $sort;
+
+    public $sortedImages;
+
+    protected $listeners = ['updateGallery', 'updateSort'];
     
     public function render()
     {
@@ -26,7 +31,21 @@ class Gallery extends Component
             $this->project = Project::find($id);
         }
 
+        $this->sort = "by newest";
+
         $this->setImages();
+    }
+
+
+    private function sortImages(){
+        if($this->sort == 'by newest'){
+            $this->images = Image::where("user_id", auth()->user()->id)->get()->sortByDesc("created_at");
+
+        }
+        if($this->sort == 'by oldest'){
+            $this->images = Image::where("user_id", auth()->user()->id)->get()->sortBy("created_at");
+        }
+        return $this->sortedImages;
     }
 
 
@@ -40,8 +59,14 @@ class Gallery extends Component
     }
 
 
-    public function addedNewImage(){
+    public function updateGallery(){
         $this->setImages();
+        $this->sortImages();
         $this->render();
+    }
+
+    public function updateSort($sort){
+        $this->sort = $sort;
+        $this->updateGallery();
     }
 }

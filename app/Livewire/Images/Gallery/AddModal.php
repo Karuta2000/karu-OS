@@ -31,6 +31,6 @@ class AddModal extends Component
         ]);
         $this->reset('url');
 
-        $this->dispatch('addedNewImage');
+        $this->dispatch('updateGallery');
     }
 }
