@@ -2,6 +2,8 @@
 
 use Livewire\Volt\Component;
 
+use Masmerise\Toaster\Toaster;
+
 new class extends Component {
 
     public $sort;
@@ -17,6 +19,7 @@ new class extends Component {
     public function updateGallery(){
         
         $this->dispatch('updateGallery');
+        Toaster::info('Gallery refreshed!');
     }
 
 }

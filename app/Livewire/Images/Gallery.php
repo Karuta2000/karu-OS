@@ -34,18 +34,18 @@ class Gallery extends Component
         $this->sort = "by newest";
 
         $this->setImages();
+        $this->sortImages();
     }
 
 
     private function sortImages(){
         if($this->sort == 'by newest'){
-            $this->images = Image::where("user_id", auth()->user()->id)->get()->sortByDesc("created_at");
+            $this->images = $this->images->sortByDesc("created_at");
 
         }
         if($this->sort == 'by oldest'){
-            $this->images = Image::where("user_id", auth()->user()->id)->get()->sortBy("created_at");
+            $this->images = $this->images->sortBy("created_at");
         }
-        return $this->sortedImages;
     }
 
 
