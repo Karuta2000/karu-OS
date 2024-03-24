@@ -30,5 +30,7 @@
             </div>
         </main>
     </div>
+
+    <x-toaster-hub />
 </body>
 </html>

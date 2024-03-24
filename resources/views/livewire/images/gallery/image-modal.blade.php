@@ -17,6 +17,7 @@ new class extends Component {
         $this->dispatch('hideModal');
 
         $this->dispatch('updateGallery');
+        Toaster::success('Image deleted!');
     }
 
     public function setAvatar()
@@ -25,6 +26,7 @@ new class extends Component {
         $user->avatar = $this->image->url;
         $user->save();
         $this->dispatch('userUpdated');
+        Toaster::success('Avatar set!');
     }
 };
 

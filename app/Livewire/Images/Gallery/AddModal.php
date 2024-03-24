@@ -5,6 +5,7 @@ namespace App\Livewire\Images\Gallery;
 use App\Models\Image;
 use App\Models\Project;
 use Livewire\Component;
+use Masmerise\Toaster\Toaster;
 
 class AddModal extends Component
 {
@@ -32,5 +33,6 @@ class AddModal extends Component
         $this->reset('url');
 
         $this->dispatch('updateGallery');
+        Toaster::success('Image added!');
     }
 }
