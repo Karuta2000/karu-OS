@@ -1,4 +1,4 @@
-<div class="card mb-3 bg-dark shadow-sm">
+<div class="card mb-3 bg-black bg-gradient shadow-sm">
     <div class="card-body p-2">
         <div class="btn-group" role="group">
             <button class="btn btn-light"

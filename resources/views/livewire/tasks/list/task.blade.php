@@ -49,7 +49,7 @@ new class extends Component {
                 <i class="fa-solid fa-ellipsis-vertical"></i>
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" wire:click="$dispatch('showModal', {data: {'alias' : 'tasks.modals.add-modal' }})"><i class="fa-solid fa-pen-to-square me-1"></i> Update</a></li>
+                <li><a class="dropdown-item" href="#" wire:click="$dispatch('showModal', {data: {'alias' : 'tasks.modals.update-modal','params' :{'id':'{{ $task->id }}' }}})"><i class="fa-solid fa-pen-to-square me-1"></i> Update</a></li>
                 <li><a class="dropdown-item" href="#" wire:click="delete()"><i class="fa-solid fa-trash me-1"></i> Remove</a></li>
             </ul>
         </div>

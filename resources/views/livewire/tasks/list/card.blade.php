@@ -10,7 +10,7 @@ new class extends Component {
     public $tasks;
 
     protected $listeners = [
-        'updateTaskList',
+        'updateTaskList', 'taskUpdated'
     ];
 
     public function mount($id){
@@ -26,6 +26,12 @@ new class extends Component {
 
     private function loadTasks(){
         $this->tasks = $this->list->tasks;
+    }
+
+    public function taskUpdate($id, $old_id){
+        if($this->list->id == $id || $this->list->old_id == $id ){
+            $this->loadTasks();
+        }
     }
 
 }
