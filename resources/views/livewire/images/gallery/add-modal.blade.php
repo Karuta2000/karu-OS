@@ -1,6 +1,6 @@
 <div>
     <div class="modal-header bg-primary text-light">
-        <h5 class="modal-title">Add habit</h5>
+        <h5 class="modal-title">Add image</h5>
     </div>
     <div class="modal-body">
         <div class="mb-3 row">
