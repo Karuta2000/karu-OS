@@ -14,6 +14,7 @@ new class extends Component {
 
     public function sortChanged(){
         $this->dispatch('updateSort', $this->sort);
+        Toaster::info('Images sorted!');
     }
 
     public function updateGallery(){
