@@ -2,8 +2,8 @@
     <div class="card-body p-2">
         <div class="btn-group" role="group">
             <button class="btn btn-light"
-                wire:click="$dispatch('showModal', {data: {'alias' : 'tasks.modals.add-modal' }})"><i
-                    class="fa-solid fa-square-check"></i></button>
+                wire:click="$dispatch('showModal', {data: {'alias' : 'tasks.modals.add-board-modal' }})"><i
+                    class="fa-solid fa-list"></i></button>
         </div>
     </div>
 </div>
