@@ -39,9 +39,7 @@ new class extends Component {
 ?>
 
 <div class="card shadow-sm">
-
     <div class="card-header">{{ $this->list->name }}</div>
-
     <div class="card-body p-0">
         <ul class="list-group list-group-flush">
             @empty($list->tasks)

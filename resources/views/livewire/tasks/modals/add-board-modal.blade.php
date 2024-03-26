@@ -13,7 +13,6 @@ new class extends Component {
     //Public colors;
     public $colors;
 
-
     public function mount()
     {
         $this->description = '';
@@ -29,9 +28,7 @@ new class extends Component {
             'user_id' => Auth::id(),
         ]);
     }
-
 };
-
 ?>
 
 <div>

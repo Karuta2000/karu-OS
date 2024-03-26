@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TaskBoard extends Model
 {
     use HasFactory;
-
-    public $title;
-
+    
     protected $fillable = ['title', 'description', 'user_id', 'color_id'];
 
     public function user(){

@@ -2,7 +2,4 @@
     <div class="m-4">
         <livewire:tasks.main />
     </div>
-    
-    
-
 </x-app-layout>
