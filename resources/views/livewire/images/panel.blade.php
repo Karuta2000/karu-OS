@@ -32,7 +32,7 @@ new class extends Component {
         <div class="w-100">
             <div class="btn-group" role="group">
                 <button class="btn btn-light"
-                    wire:click="$dispatch('showModal', {data: {'alias' : 'images.gallery.add-modal' }})"><i
+                    wire:click="$dispatch('showModal', {data: {'alias' : 'images.modals.add', }})"><i
                         class="fa-solid fa-plus"></i></button>
                 <button class="btn btn-light"
                     wire:click="updateGallery()"><i class="fa-solid fa-rotate-right"></i></button>

@@ -14,8 +14,14 @@ new class extends Component {
 
     public function mount()
     {
-        $this->taskLists = TaskList::orderBy("created_at","desc")->get();
-        $this->taskList = $this->taskLists->first()->id;
+        
+        if($this->taskLists = TaskList::orderBy("created_at","desc")->get()){
+            $this->taskList = $this->taskLists->first()->id;
+        }
+        else {
+            $this->taskList = null;
+        }
+        
     }
 
     public function addTask()
