@@ -31,8 +31,11 @@
                             Welcome to karu OS
                         </h1>
                         <hr>
-                        <p class="h3">
-                            There not much to do, but soon, there will new features
+                        <p class="h5">
+                            There is not much to do, but soon, there will new features
+                        </p>
+                        <p class="h5">
+                            You can use gallery, tasks, habits and projects for now.
                         </p>
                         <hr>
                         <a href="https://github.com/Karuta2000/karu-OS">
@@ -43,7 +46,7 @@
                     
                     <div class="card p-3">
                         <p class="h4">
-                            v0.4
+                            v0.5
                         </p>
                     </div>
                 </div>
