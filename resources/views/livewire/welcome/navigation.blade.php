@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light bg-gradient">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
-            <img src="{{ asset('images/icon.png')}}" alt="Bootstrap" width="40" height="40">
+            <img src="{{ asset('images/icon.jpg')}}" alt="Bootstrap" width="40" height="40">
           </a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             @auth

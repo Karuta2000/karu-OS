@@ -24,12 +24,12 @@
     <livewire:welcome.navigation />
 
     <div
-        style=" width: 100%; height: 100%; position: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url(' {{ asset('images/welcome-background.jpg') }}')">
+        style=" width: 100%; height: 100%; position: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url(' {{ asset('images/welcome-bg.gif') }}')">
         <section class="p-5" style="position: fixed; overflow: auto; width: 100%; height: 100%; background: #FFFFFFBB">
                 <div class="row">
                     <div class="col-6">
 
-                        <div class="card p-3 mb-3">
+                        <div class="card p-3 mb-3 bg-gradient">
                             <h4 class="p-3">v0.4</h4>
 
                             <ul>

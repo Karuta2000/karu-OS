@@ -14,7 +14,7 @@
     <livewire:scripts />
     <livewire:modals />
     <livewire:styles />
-    <link rel="icon" type="image/x-icon" href="{{ asset('images/icon.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/icon.jpg') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 </head>
@@ -22,7 +22,7 @@
 <body class="h-100">
     <livewire:welcome.navigation />
 
-    <div style=" width: 100%; height: 100%; position: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url(' {{ asset('images/welcome-background.jpg') }}')">
+    <div style=" width: 100%; height: 100%; position: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url(' {{ asset('images/welcome-bg.gif') }}')">
         <section class="p-5" style="position: fixed; width: 100%; height: 100%; background: #FFFFFFBB">
             <div class="row">
                 <div class="col-4">
