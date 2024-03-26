@@ -29,7 +29,7 @@ new class extends Component {
         Task::create([
             'title' => $this->title,
             'user_id' => auth()->id(),
-            'task_list_id' => $this->board_id,
+            'task_board_id' => $this->board_id,
         ]);
 
         $this->dispatch('updateBoard', [
@@ -52,7 +52,6 @@ new class extends Component {
             <div class="col-10 mb-3">
                 <input type="text" class="form-control" id="title" wire:model='title'>
             </div>
-            <label for="task-list" class="col-form-label col-2">Task List </label>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" wire:click="$dispatch('hideModal')">Close</button>

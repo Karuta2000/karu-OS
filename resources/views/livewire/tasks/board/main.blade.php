@@ -7,7 +7,7 @@ new class extends Component {
     public $board;
     public $tasks;
 
-    protected $listeners = ['boardUpdated'];
+    protected $listeners = ['updateBoard'];
 
     public function mount($id)
     {
@@ -15,7 +15,7 @@ new class extends Component {
         $this->tasks = $this->board->tasks;
     }
 
-    public function boardUpdated($id){
+    public function updateBoard($id){
         if($id == $this->board->id){
             $this->tasks = $this->board->tasks;
         }
