@@ -5,10 +5,20 @@ use App\Models\TaskBoard;
 
 new class extends Component {
     public $board;
+    public $tasks;
+
+    protected $listeners = ['boardUpdated'];
 
     public function mount($id)
     {
         $this->board = TaskBoard::find($id);
+        $this->tasks = $this->board->tasks;
+    }
+
+    public function boardUpdated($id){
+        if($id == $this->board->id){
+            $this->tasks = $this->board->tasks;
+        }
     }
 };
 
@@ -21,12 +31,12 @@ new class extends Component {
         </p>
     </div>
     <div class="card-body">
-        <div class="card shadow-sm bg-transparent my-2 p-3">
-            test
-        </div>
+        @foreach ($tasks as $key => $task)
+            <livewire:tasks.board.task id="{{ $task->id }}" />
+        @endforeach
     </div>
     <div class="card-footer p-0">
-        <button class="btn btn-light w-100">
+        <button class="btn btn-light w-100" wire:click="$dispatch('showModal', {data: {'alias' : 'tasks.modals.add-task-modal','params' :{'board':'{{ $board->id }}'}  }})">
             <i class="fa-solid fa-plus"></i>
         </button>
     </div>

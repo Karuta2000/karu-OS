@@ -76,7 +76,7 @@ new class extends Component {
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" wire:click="$dispatch('hideModal')">Close</button>
-        <button type="button" class="btn btn-primary" wire:click='addImage()' data-bs-dismiss="modal">Save
+        <button type="button" class="btn btn-primary" wire:click='addImage()'>Save
             changes</button>
     </div>
 </div>

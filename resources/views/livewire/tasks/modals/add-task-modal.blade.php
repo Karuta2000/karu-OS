@@ -6,22 +6,18 @@ use App\Models\TaskList;
 use App\Models\Task;
 
 new class extends Component {
-    public $title = 'test';
+    public $title;
+
+    public $board_id;
 
     public $tasks;
     public $taskLists;
     public $taskList;
 
-    public function mount()
+    public function mount($board)
     {
-        
-        if($this->taskLists = TaskList::orderBy("created_at","desc")->get()){
-            $this->taskList = $this->taskLists->first()->id;
-        }
-        else {
-            $this->taskList = null;
-        }
-        
+
+        $this->board_id = $board; 
     }
 
     public function addTask()
@@ -33,14 +29,12 @@ new class extends Component {
         Task::create([
             'title' => $this->title,
             'user_id' => auth()->id(),
-            'task_list_id' => $this->taskList,
+            'task_list_id' => $this->board_id,
         ]);
 
-        $this->dispatch('updateTaskList', [
-            'id' => $this->taskList
+        $this->dispatch('updateBoard', [
+            'id' => $this->board_id
         ]);
-
-        $this->reset(['title']);
     }
 
 };
@@ -49,7 +43,7 @@ new class extends Component {
 
 <div>
     <div class="modal-header bg-primary text-light">
-        <h5 class="modal-title">Add project</h5>
+        <h5 class="modal-title">Add task</h5>
     </div>
     <div class="modal-body">
         <div class="row">
@@ -59,14 +53,6 @@ new class extends Component {
                 <input type="text" class="form-control" id="title" wire:model='title'>
             </div>
             <label for="task-list" class="col-form-label col-2">Task List </label>
-            <div class="col-10">
-
-                <select class="form-select" aria-label="Default select example" wire:model='taskList'>
-                    @foreach ($taskLists as $list)
-                        <option value="{{ $list->id }}">{{ $list->name }}</option>
-                    @endforeach
-                </select>
-            </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" wire:click="$dispatch('hideModal')">Close</button>

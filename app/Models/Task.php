@@ -16,8 +16,8 @@ class Task extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function taskList(){
-        return $this->belongsTo(TaskList::class);
+    public function taskBoard(){
+        return $this->belongsTo(TaskBoard::class);
     }
 
     
