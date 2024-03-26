@@ -20,11 +20,11 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-light bg-gradient">
+    <div class="min-h-screen">
         <livewire:layout.sidebar />
 
         <!-- Page Content -->
-        <main class="content">
+        <main class="content bg-gradient">
             <div class="h-100">
                 {{ $slot }}
             </div>

@@ -3,7 +3,7 @@
         <div class="btn-group" role="group">
             <button class="btn btn-light"
                 wire:click="$dispatch('showModal', {data: {'alias' : 'tasks.modals.add-modal' }})"><i
-                    class="fa-solid fa-plus"></i></button>
+                    class="fa-solid fa-square-check"></i></button>
         </div>
     </div>
 </div>
