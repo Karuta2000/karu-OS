@@ -1,0 +1,9 @@
+.task-card {
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.task-card:hover {
+    opacity: 0.85;
+    transform: scale(1.009);
+}

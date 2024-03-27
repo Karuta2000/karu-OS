@@ -1,6 +1,7 @@
 <?php
 
 use Livewire\Volt\Component;
+use Masmerise\Toaster\Toaster;
 use App\Models\Task;
 
 new class extends Component {
@@ -22,6 +23,7 @@ new class extends Component {
         $this->task->title = $this->title;
         $this->task->save();
         $this->dispatch('updateTask');
+        Toaster::success('Task updated!');
     }
 
 

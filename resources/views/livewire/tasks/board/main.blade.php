@@ -40,7 +40,7 @@ new class extends Component {
                 <div class="flex-grow-1">
                     {{ $board->title }}
                 </div>
-                
+
                 <div>
                     <div class="dropdown">
                         <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -59,7 +59,7 @@ new class extends Component {
 
 
     </div>
-    <div class="card-body bg-transparent">
+    <div class="card-body bg-transparent p-3">
         @foreach ($tasks as $key => $task)
             <livewire:tasks.board.task id="{{ $task->id }}"  :key="$task->id"  />
         @endforeach
