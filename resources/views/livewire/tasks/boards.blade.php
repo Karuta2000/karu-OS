@@ -10,7 +10,8 @@ new class extends Component {
 
     public $boards;
 
-    protected $listeners = ['boardAdded'];
+    protected $listeners = ['boardAdded' => '$refresh', 
+    'boardDeleted'];
 
     public function mount(){
         $this->boards = TaskBoard::where('user_id', Auth::id())->get();
@@ -18,6 +19,10 @@ new class extends Component {
 
     public function hydrate()
     {
+        $this->boards = TaskBoard::where('user_id', Auth::id())->get();
+    }
+
+    public function boardAdded(){
         $this->boards = TaskBoard::where('user_id', Auth::id())->get();
     }
 
@@ -30,7 +35,7 @@ new class extends Component {
     <div class="overflow-x-row">
         @foreach ($boards as $key => $board)
             <div class="overflow-x-item p-2">
-                <livewire:tasks.board.main id="{{ $board->id }}" />
+                <livewire:tasks.board.main id="{{ $board->id }}" wire:key="{{ $board->id }}" />
             </div>
         @endforeach
     </div>

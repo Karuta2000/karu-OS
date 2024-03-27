@@ -34,10 +34,10 @@ new class extends Component {
     }
 
     public function priorityColor(){
-        if($this->task->priority < 3){
+        if($this->task->priority < 4){
             return "text-bg-primary";
         }
-        if($this->task->priority < 6){
+        if($this->task->priority < 8){
             return "text-bg-warning";
         }
         if($this->task->priority <= 10){
@@ -85,7 +85,8 @@ new class extends Component {
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#" wire:click="delete()">Delete tasks</a></li>
+                        <li><a class="dropdown-item" href="#"  wire:click="$dispatch('showModal', {data: {'alias' : 'tasks.modals.task-modal','params' :{'id':'{{ $task->id }}'}  }})">Change task</a></li>
+                        <li><a class="dropdown-item" href="#" wire:click="delete()">Delete task</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#" wire:click="setStatus('not started')">Set as not started</a></li>
                         <li><a class="dropdown-item" href="#" wire:click="setStatus('in progress')">Set as in progress</a></li>

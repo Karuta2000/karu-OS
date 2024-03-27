@@ -31,6 +31,16 @@ new class extends Component {
         $this->dispatch('updateBoard');
         Toaster::success('Board cleared!');
     }
+
+    public function deleteBoard()
+    {
+        $board = TaskBoard::find($this->board->id);
+        $board->delete();
+        $this->dispatch('boardDeleted');
+        Toaster::success('Board deleted!');
+
+    }
+
 };
 
 ?>
@@ -49,6 +59,7 @@ new class extends Component {
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </button>
                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" wire:click='deleteBoard()'>Delete</a></li>
                             <li><a class="dropdown-item" href="#" wire:click='clearBoard()'>Clear</a></li>
                         </ul>
                     </div>

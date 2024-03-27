@@ -4,6 +4,7 @@ use Livewire\Volt\Component;
 use App\Models\TaskBoard;
 use App\Models\Color;
 use Illuminate\Support\Facades\Auth;
+use Masmerise\Toaster\Toaster;
 
 new class extends Component {
     public $title;
@@ -27,6 +28,9 @@ new class extends Component {
             'color_id' => $this->col,
             'user_id' => Auth::id(),
         ]);
+
+        $this->dispatch('boardAdded');
+        Toaster::success('Board added!');
     }
 };
 ?>
@@ -68,7 +72,7 @@ new class extends Component {
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" wire:click="$dispatch('hideModal')">Close</button>
-            <button type="button" class="btn btn-primary" wire:click='addBoard()'>Save
+            <button type="button" class="btn btn-primary" wire:click='addBoard()' data-bs-dismiss="modal">Save
                 changes</button>
         </div>
     </div>
