@@ -2,12 +2,13 @@
 
 use Livewire\Volt\Component;
 use App\Models\TaskBoard;
+use Livewire\Attributes\On; 
 
 new class extends Component {
     public $board;
     public $tasks;
 
-    protected $listeners = ['updateBoard'];
+    protected $listeners = ['updateBoard' => 'refresh'];
 
     public function mount($id)
     {
@@ -15,14 +16,18 @@ new class extends Component {
         $this->tasks = $this->board->tasks;
     }
 
-    public function updateBoard($id){
-        if($id == $this->board->id){
+    
 
-            $this->tasks = $this->board->tasks;
-        }
+    public function hydrate()
+    {
+        $this->tasks = $this->board->tasks;
     }
 
 };
+
+
+
+
 
 ?>
 
@@ -34,11 +39,12 @@ new class extends Component {
     </div>
     <div class="card-body bg-transparent">
         @foreach ($tasks as $key => $task)
-            <livewire:tasks.board.task id="{{ $task->id }}" wire:key="$task->id" />
+            <livewire:tasks.board.task id="{{ $task->id }}"  :key="$task->id"  />
         @endforeach
     </div>
     <div class="card-footer p-0">
-        <button class="btn bg-transparent w-100" wire:click="$dispatch('showModal', {data: {'alias' : 'tasks.modals.add-task-modal','params' :{'board':'{{ $board->id }}'}  }})">
+        <button class="btn bg-transparent w-100"
+            wire:click="$dispatch('showModal', {data: {'alias' : 'tasks.modals.add-task-modal','params' :{'board':'{{ $board->id }}'}  }})">
             <i class="fa-solid fa-plus"></i>
         </button>
     </div>

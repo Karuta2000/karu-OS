@@ -14,6 +14,6 @@ new class extends Component {
 
 ?>
 
-<div class="card shadow-sm bg-transparent my-2 p-3">
+<div class="shadow-sm card bg-gradient my-2 p-3">
     {{ $task->title }}
 </div>

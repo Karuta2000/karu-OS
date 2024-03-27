@@ -31,10 +31,7 @@ new class extends Component {
             'user_id' => auth()->id(),
             'task_board_id' => $this->board_id,
         ]);
-
-        $this->dispatch('updateBoard', [
-            'id' => $this->board_id
-        ]);
+        $this->dispatch('updateBoard', $this->board_id);
     }
 
 };
