@@ -22,7 +22,6 @@ new class extends Component {
         $this->dispatch('updateGallery');
         Toaster::info('Gallery refreshed!');
     }
-
 }
 
 ?>
@@ -42,7 +41,5 @@ new class extends Component {
                 <option value="by oldest">From oldest</option>
             </select>
         </div>
-
-
     </div>
 </div>

@@ -60,6 +60,7 @@ new class extends Component {
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#" wire:click='deleteBoard()'>Delete</a></li>
+                            <li><a class="dropdown-item" href="#" wire:click="$dispatch('showModal', {data: {'alias' : 'tasks.modals.update-board-modal','params' :{'id':'{{ $board->id }}'}  }})">Update</a></li>
                             <li><a class="dropdown-item" href="#" wire:click='clearBoard()'>Clear</a></li>
                         </ul>
                     </div>

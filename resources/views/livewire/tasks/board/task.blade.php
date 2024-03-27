@@ -80,7 +80,7 @@ new class extends Component {
                 
             </div>
             <div>
-                <div class="dropdown">
+                <div class="dropup">
                     <button class="ps-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </button>
