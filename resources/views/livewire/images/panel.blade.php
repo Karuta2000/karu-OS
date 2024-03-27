@@ -31,10 +31,8 @@ new class extends Component {
     <div class="card-body p-2 d-flex justify-content-evenly">
         <div class="w-100">
             <div class="btn-group" role="group">
-                <button class="btn btn-light"
-                    wire:click="$dispatch('showModal', {data: {'alias' : 'images.modals.add', }})"><i
-                        class="fa-solid fa-plus"></i></button>
-                <button class="btn btn-light"
+                <livewire:images.image-form />
+                <button class="btn btn-light ms-2"
                     wire:click="updateGallery()"><i class="fa-solid fa-rotate-right"></i></button>
             </div>
         </div>
