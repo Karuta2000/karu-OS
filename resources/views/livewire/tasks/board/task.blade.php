@@ -80,8 +80,8 @@ new class extends Component {
                 
             </div>
             <div>
-                <div class="dropup">
-                    <button class="ps-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="dropdown">
+                    <button class="ps-2" type="button" data-bs-toggle="dropdown" data-bs-popper-config='{"strategy":"fixed"}' aria-expanded="false">
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </button>
                     <ul class="dropdown-menu">

@@ -9,6 +9,9 @@ new class extends Component {
     public function mount($id)
     {
         $this->image = Image::find($id);
+        $this->image->views += 1; 
+        $this->image->save();
+        $this->dispatch('updateGallery');
     }
 
     public function deleteImage()
