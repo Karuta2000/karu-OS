@@ -2,6 +2,7 @@
 
 use Livewire\Volt\Component;
 use App\Models\Task;
+use Carbon\Carbon;
 
 new class extends Component {
     public $task;
@@ -25,7 +26,15 @@ new class extends Component {
     <div>
         {{ $task->title }}
     </div>
+    @if ($task->due != null)
     <div>
-        Updated: {{ $task->updated_at->diffForHumans() }}
+        Due: {{ Carbon::parse($task->due)->diffForHumans() }} 
     </div>
+
+    @endif
+    <div>
+        <span class="badge rounded-pill text-bg-primary">{{ $task->priority }}</span>
+        <span class="badge rounded-pill text-bg-primary">{{ $task->status }}</span>
+    </div>
+    
 </div>

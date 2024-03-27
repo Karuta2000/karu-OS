@@ -4,6 +4,7 @@ use Livewire\Volt\Component;
 use App\Models\Project;
 use App\Models\TaskList;
 use App\Models\Task;
+use Masmerise\Toaster\Toaster;
 
 new class extends Component {
     public $title;
@@ -32,6 +33,7 @@ new class extends Component {
             'task_board_id' => $this->board_id,
         ]);
         $this->dispatch('updateBoard', $this->board_id);
+        Toaster::success('Task added!');
     }
 
 };

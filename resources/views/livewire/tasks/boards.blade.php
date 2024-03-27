@@ -10,14 +10,23 @@ new class extends Component {
 
     public $boards;
 
+    protected $listeners = ['boardAdded'];
+
     public function mount(){
         $this->boards = TaskBoard::where('user_id', Auth::id())->get();
     }
+
+    public function hydrate()
+    {
+        $this->boards = TaskBoard::where('user_id', Auth::id())->get();
+    }
+
+
 }
 
 ?>
 
-<div>
+<div class="h-50">
     <div class="row">
         @foreach ($boards as $key => $board)
             <div class="col-3 p-3">
