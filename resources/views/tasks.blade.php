@@ -1,5 +1,5 @@
-<x-app-layout class="m-4">
-    <div class="m-4">
+<x-app-layout>
+    <div>
         <livewire:tasks.main />
     </div>
 </x-app-layout>

@@ -1,3 +1,13 @@
+*::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+* ::-webkit-scrollbar-thumb {
+    background: #7c7c7c;
+}
+
+
 .sidebar {
     position: fixed;
     width: 5%;
@@ -14,7 +24,7 @@
     overflow-x: auto;
     overflow-x: hidden;
     background-color: #F0F7F4;
-    
+
 }
 
 
@@ -32,7 +42,7 @@
     font-size: 24px !important;
     color: #000000 !important;
     background-color: #FFFFFF !important;
-    
+
 }
 
 .sidebar-link {

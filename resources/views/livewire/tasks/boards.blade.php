@@ -26,10 +26,10 @@ new class extends Component {
 
 ?>
 
-<div class="h-50">
-    <div class="row">
+<div>
+    <div class="overflow-x-row">
         @foreach ($boards as $key => $board)
-            <div class="col-3 p-3">
+            <div class="overflow-x-item p-2">
                 <livewire:tasks.board.main id="{{ $board->id }}" />
             </div>
         @endforeach

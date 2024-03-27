@@ -56,7 +56,7 @@ new class extends Component {
             </div>
         </div>
     </div>
-    <div class="bg-transparent">
+    <div class="bg-transparent task-board">
         @foreach ($tasks as $key => $task)
             <livewire:tasks.board.task id="{{ $task->id }}" :key="$task->id" />
         @endforeach
