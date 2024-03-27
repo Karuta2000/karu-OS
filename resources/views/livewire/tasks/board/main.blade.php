@@ -16,26 +16,48 @@ new class extends Component {
         $this->tasks = $this->board->tasks;
     }
 
-    
+
 
     public function hydrate()
     {
         $this->tasks = $this->board->tasks;
     }
 
+    public function clearBoard(){
+        foreach ($this->tasks as $key => $task) {
+            $task->delete();
+        }
+        $this->tasks = $this->board->tasks;
+        $this->dispatch('updateBoard');
+    }
+
 };
-
-
-
-
-
 ?>
 
 <div class="card shadow bg-gradient" style="background-color: {{ $board->color->hex }}44">
     <div class="card-header bg-transparent p-3">
-        <p class="m-0 h5">
-            {{ $board->title }}
-        </p>
+            <div class="d-flex p-0 h5 m-0">
+                <div class="flex-grow-1">
+                    {{ $board->title }}
+                </div>
+                
+                <div>
+                    <div class="dropdown">
+                        <button type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#" wire:click='clearBoard()'>Clear</a></li>
+                        </ul>
+                      </div>
+                </div>
+            </div>
+            
+
+
+            
+
+
     </div>
     <div class="card-body bg-transparent">
         @foreach ($tasks as $key => $task)

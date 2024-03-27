@@ -33,7 +33,8 @@ new class extends Component {
 
 <div>
     <div class="modal-header bg-primary text-light">
-        <h5 class="modal-title">Add project</h5>
+        <h5 class="modal-title"><i
+            class="fa-solid fa-list me-3"></i>Add board</h5>
     </div>
     <div class="modal-body">
         <div class="row">
