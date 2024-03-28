@@ -1,6 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/laravel/compare/v0.6...main)
+## [Unreleased](https://github.com/laravel/laravel/compare/v0.6.1...main)
+
+## [v0.6.1](https://github.com/laravel/laravel/compare/v0.6...v0.6.1) - 2024-03-28
+
+**Fixed app breaking error**
+
+- removed spatie/laravel-backup from app
 
 ## [v0.6](https://github.com/laravel/laravel/compare/v0.5...v0.6) - 2024-03-28
 
