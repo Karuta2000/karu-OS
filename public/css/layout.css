@@ -1,16 +1,56 @@
+*::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+* ::-webkit-scrollbar-thumb {
+    background: #7c7c7c;
+}
+
+
 .sidebar {
     position: fixed;
-    width: 10%;
+    width: 5%;
     height: 100%;
+    z-index: 100;
 }
 
 
 .content {
     position: fixed;
-    width: 90%;
+    width: 95%;
     height: 100%;
-    left: 10%;
+    left: 5%;
     overflow-x: auto;
     overflow-x: hidden;
-    
+    background-color: #F0F7F4;
+
+}
+
+
+.sidebar-avatar {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+
+}
+
+.active-sidebar-link {
+    font-size: 24px !important;
+    color: #000000 !important;
+    background-color: #FFFFFF !important;
+
+}
+
+.sidebar-link {
+    font-size: 24px !important;
+    transition: 0.25s;
+}
+
+.sidebar-link:hover {
+    background-color: #FFFFFF;
+    color: #000000 !important;
 }

@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome');
+Route::view('/', 'welcome.welcome');
+
+Route::view('/changelog', 'welcome.changelog');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -28,11 +30,16 @@ Route::view('user/profile', 'profile.profile')
     ->middleware(['auth'])
     ->name('profile');
 
+    
+Route::view('app/settings', 'app.settings')->name('app.settings');
+
 Route::view('habits', 'habits')->name('habits');
 
 Route::view('gallery', 'gallery')->name('gallery');
 
 Route::view('tasks', 'tasks')->name('tasks');
+
+Route::view('notes', 'notes')->name('notes');
 
 Route::view('projects/project-list', 'projects.project-list')->name('projects');
 

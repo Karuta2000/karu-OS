@@ -19,7 +19,7 @@
 
 <body class="font-sans text-gray-900 antialiased">
     <div class="min-h-screen justify-content-lg-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900"
-        style=" width: 100%; height: 100%; position: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url(' {{ asset('images/welcome-background.jpg') }}')">
+        style=" width: 100%; height: 100%; position: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url(' {{ asset('images/welcome-bg.gif') }}')">
         <section class="p-5" style="position: fixed; width: 100%; height: 100%; background: #FFFFFFBB">
             <div>
                 <a href="/" wire:navigate>
