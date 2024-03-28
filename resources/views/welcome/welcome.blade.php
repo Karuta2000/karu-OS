@@ -44,10 +44,32 @@
                     </div>
                     
                     
-                    <div class="card p-3">
-                        <p class="h4">
-                            v0.6
-                        </p>
+                    <div class="card p-3 mb-3 bg-gradient">
+                        <h4 class="p-3">v0.6</h4>
+
+                        <ul>
+                            <li>
+                                Karu OS Version 0.6 Release Notes</li>
+                                <li>Release Date: March 28, 2024</li>
+                                <li>Task Management Overhaul:</li>
+                                <li>Introduction of Task Boards:</li>
+                                <li>Task lists have been replaced with customizable task boards, offering users greater flexibility and organization in managing tasks. These boards are independent of projects and can be tailored to suit individual needs.</li>
+                                <li>Each task board can be personalized with a distinct color and title, enhancing visual organization and clarity.</li>
+                                <li>Enhanced Task Features:</li>
+                                <li>Additional Task Attributes: Tasks now include due dates, priorities, and statuses.</li>
+                                <li>Expanded Status Options: Tasks can now be classified into four statuses: not started, in progress, completed, and cancelled, providing users with more comprehensive tracking capabilities.</li>
+                                <li>Gallery Improvements:</li>
+                                <li>Dropdown Form Integration:</li>
+                                <li>The gallery interface has been updated to feature a dropdown form instead of modal dialogs, improving accessibility and user interaction.</li>
+                                <li>View Count Display:</li>
+                                <li>Each image now includes the number of views it has received, allowing users to gauge image popularity and engagement.</li>
+                                <li>Setting Page Enhancements:</li>
+                                <li>Design Improvements:</li>
+                                <li>The settings page has been refined and enhanced for improved usability and aesthetics.</li>
+                                <li>General Updates:</li>
+                                <li>Overall Design Adjustments:</li>
+                                <li>Various design adjustments have been made throughout the platform to enhance user experience and visual coherence.</li>
+                        </ul>
                     </div>
                 </div>
             </div>

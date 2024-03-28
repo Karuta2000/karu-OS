@@ -29,6 +29,30 @@
                 <div class="row">
                     <div class="col-6">
 
+
+                        <div class="card p-3 mb-3 bg-gradient">
+                            <h4 class="p-3">v0.5</h4>
+
+                            <ul>
+                                <li>Karu OS Version 0.5 Release Notes</li>
+                                <li>Release Date: March 26, 2024</li>
+                                <li>Changes and Enhancements:</li>
+                                <li>Further Simplification of Sidebar:</li>
+                                <li>The sidebar has been made even smaller and simpler, now displaying only icons without accompanying text. This enhances the visual clarity and efficiency of navigation.</li>
+                                <li>Gallery Focus:</li>
+                                <li>Modal Integration for Images: Users can now interact with images through modal dialogs, enabling actions such as viewing, deleting, or setting images as avatars directly from the gallery.</li>
+                                <li>Additional Image Information: Time of image addition and associated projects are now displayed, providing users with more context and organization.</li>
+                                <li>Sorting Options: Users can now sort images by newest or oldest, facilitating easier navigation and management.</li>
+                                <li>Toaster Notifications: Toasters have been implemented to display notifications, enhancing user feedback and interaction within the gallery.</li>
+                                <li>Task Updates:</li>
+                                <li>Modal Task Updates: Tasks can now be updated via modal dialogs, improving task management efficiency and user experience.</li>
+                                <li>Introduction of Colors:</li>
+                                <li>Color Features: Users can now add and display colors within the system. While the functionality is currently limited, more features related to colors are planned for future updates.</li>
+                                <li>Welcome Page Changelog:</li>
+                                <li>The welcome page now includes a changelog, providing users with immediate access to information about recent updates and changes to the platform.</li>
+                            </ul>
+                        </div>
+
                         <div class="card p-3 mb-3 bg-gradient">
                             <h4 class="p-3">v0.4</h4>
 
