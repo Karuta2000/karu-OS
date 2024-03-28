@@ -10,10 +10,10 @@
             <a class="nav-link {{ $page == "avatar_banner" ? "active bg-dark" : "" }}" href="#" aria-current="page" wire:click='setPage("avatar_banner")'>Avatar and banner</a>
         </li>
         <li class="nav-item me-2">
-            <a class="nav-link {{ $page == "password" ? "active bg-dark" : "" }}" href="#" aria-current="page" wire:click='setPage("password")'>Password</a>
+            <a class="nav-link disabled {{ $page == "password" ? "active bg-dark" : "" }}" href="#" aria-current="page" wire:click='setPage("password")'>Password</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ $page == "delete_profile" ? "active bg-dark" : "" }}" href="#" aria-current="page" wire:click='setPage("delete_profile")'>Delete Profile</a>
+            <a class="nav-link disabled {{ $page == "delete_profile" ? "active bg-dark" : "" }}" href="#" aria-current="page" wire:click='setPage("delete_profile")'>Delete Profile</a>
         </li>
     </ul>
 </div>

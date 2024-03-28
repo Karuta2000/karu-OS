@@ -13,8 +13,8 @@ use function Livewire\Volt\state;
 use Masmerise\Toaster\Toaster;
 
 state([
-    'avatar' => fn () => auth()->user()->avatar,
-    'cover' => fn () => auth()->user()->cover,
+    'avatar' => fn() => auth()->user()->avatar,
+    'cover' => fn() => auth()->user()->cover,
 ]);
 
 $updateProfileInformation = function () {
@@ -32,29 +32,30 @@ $updateProfileInformation = function () {
     $this->dispatch('profile-updated', name: $user->name);
 };
 
-
 new class extends Component {
     public $avatar;
     public $cover;
 
-
-    public function mount(){
+    public function mount()
+    {
         $this->avatar = Auth::user()->avatar;
         $this->cover = Auth::user()->cover;
     }
 
-    public function updateAvatar(){
+    public function updateAvatar()
+    {
         $user = Auth::user();
         $user->avatar = $this->avatar;
         $user->save();
     }
 
-    public function updateCover(){
+    public function updateCover()
+    {
         $user = Auth::user();
         $user->cover = $this->cover;
         $user->save();
     }
-}
+};
 
 ?>
 
@@ -68,9 +69,14 @@ new class extends Component {
                 <div class="mb-3 row justify-content-md-center">
                     <div class="col-3">
                         <div class="d-flex">
-                            <img src="{{ $avatar }}" alt="avatar" class="w-100" style="border-radius: 50%">
+                            <div
+                                style="background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            border-radius: 50%; width: 350px; height: 350px; background-image: url('{{ $avatar }}')">
+                            </div>
                         </div>
-                        
+
                     </div>
                     <div class="col-9 align-self-center">
                         <div class="row align-middle">
@@ -80,14 +86,14 @@ new class extends Component {
                             </div>
                         </div>
                     </div>
-                    
-                    
+
+
                 </div>
-                
+
                 <div class="d-flex mt-5">
                     <button class="btn btn-dark px-3" wire:click='updateAvatar'>Save avatar</button>
                 </div>
-            </div>    
+            </div>
 
             <hr>
 
@@ -95,9 +101,10 @@ new class extends Component {
                 <div class="mb-3 row justify-content-md-center">
                     <div class="col-3">
                         <div class="d-flex">
-                            <img src="{{ $cover != "" ? $cover : "https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg" }}" alt="avatar" class="w-100">
+                            <img src="{{ $cover != '' ? $cover : 'https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg' }}"
+                                alt="avatar" class="w-100">
                         </div>
-                        
+
                     </div>
                     <div class="col-9 align-self-center">
                         <div class="row align-middle">
@@ -107,18 +114,18 @@ new class extends Component {
                             </div>
                         </div>
                     </div>
-                    
-                    
+
+
                 </div>
-                
+
                 <div class="d-flex mt-5">
                     <button class="btn btn-dark px-3" wire:click='updateCover'>Save cover</button>
                 </div>
             </div>
 
-        
-        
+
+
         </section>
     </div>
-    
+
 </div>

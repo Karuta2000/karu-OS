@@ -46,7 +46,7 @@
                     
                     <div class="card p-3">
                         <p class="h4">
-                            v0.5
+                            v0.6
                         </p>
                     </div>
                 </div>

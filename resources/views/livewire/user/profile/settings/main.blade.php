@@ -14,10 +14,10 @@
     <livewire:user.profile.settings.sections.avatar-banner />
     @endif
     @if ($page == "password")
-    <livewire:user.profile.settings.update-password-form />
+    <livewire:user.profile.settings.sections.update-password-form />
     @endif
     @if ($page == "delete_profile")
-    <livewire:user.profile.settings.delete-user-form />
+    <livewire:user.profile.settings.sections.delete-user-form />
     @endif
 
     
