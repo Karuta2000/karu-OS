@@ -16,7 +16,7 @@
         @foreach ($colors as $color)
             <div class="col-2">
 
-                <div wire:click="$dispatch('showModal', {data: {'alias' : 'app.settings.modals.colors', 'params' :{'id':' {{ $color->id }} '}}})" class="clickable-card w-100 p-5 text-center round shadow" style="background-color: {{ $color->hex }}">
+                <div wire:click="$dispatch('showModal', {data: {'alias' : 'app.settings.modals.colors', 'params' :{'id':' {{ $color->id }} '}}})" class="clickable-card w-100 p-5 text-center round shadow" style="background-color: {{ $color->hex }}; color: {{ $color->text }}">
                     {{ $color->hex }}</div>
 
 
