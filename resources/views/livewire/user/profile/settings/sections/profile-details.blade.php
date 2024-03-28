@@ -65,7 +65,7 @@ new class extends Component {
         
             
                 <div class="d-flex mt-5">
-                    <button class="btn btn-dark" wire:click='updateUserDetails'>Save</button>
+                    <button class="btn btn-dark px-3" wire:click='updateUserDetails'>Save</button>
                 </div>
 
         

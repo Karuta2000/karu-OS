@@ -5,13 +5,13 @@
 
     
     @if ($page == "profile_settings")
-    <livewire:user.profile.settings.update-profile-information-form />
-    @endif
-    @if ($page == "avatar_banner")
-    <livewire:user.profile.settings.update-avatar-form />
+    <livewire:user.profile.settings.sections.profile-information />
     @endif
     @if ($page == "profile_details")
-    <livewire:user.profile.settings.update-user-details-form />
+        <livewire:user.profile.settings.sections.profile-details />
+    @endif
+    @if ($page == "avatar_banner")
+    <livewire:user.profile.settings.sections.avatar-banner />
     @endif
     @if ($page == "password")
     <livewire:user.profile.settings.update-password-form />
