@@ -5,7 +5,6 @@
 
     
     @if ($page == "profile_settings")
-    
     <livewire:user.profile.settings.update-profile-information-form />
     @endif
     @if ($page == "avatar_banner")

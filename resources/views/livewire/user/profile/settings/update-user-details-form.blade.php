@@ -4,6 +4,7 @@ use Livewire\Volt\Component;
 use App\Livewire\Actions\Logout;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserDetail;
+use Masmerise\Toaster\Toaster;
 
  
 new class extends Component {
@@ -12,7 +13,6 @@ new class extends Component {
     public $bio;
     public $birthday;
     public $details;
-
     public function mount(){
         $this->user = Auth::user();
         $this->details = $this->user->details;
@@ -20,7 +20,6 @@ new class extends Component {
         $this->bio = $this->details->bio;
         $this->sex = $this->details->sex;
     }
- 
     public function updateUserDetails()
     {
         $this->details->sex = $this->sex;
@@ -28,39 +27,47 @@ new class extends Component {
         $this->details->bio = $this->bio;
 
         $this->details->save();
+        Toaster::success('Details updated!');
     }
 }
 
 ?>
 
 <div class="card my-3 shadow-sm w-100">
-    <div class="card-header">
+    <div class="card-header h5 bg-dark text-light">
         Profile Details
     </div>
-    <div class="card-body">
+    <div class="card-body bg-gradient">
         <section class="w-100">
-            <form wire:submit="updateUserDetails" class="space-y-6 w-100">
-                <div>
-                    <label for="sex" class="form-label">Sex</label>
-                    <select class="form-control"  name="sex" id="sex" wire:model='sex'>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                    </select>
+
+                <div class="mb-3 row">
+                    <label for="sex" class="col-form-label col-1">Sex</label>
+                    <div class="col-11">
+                        <select class="form-control"  name="sex" id="sex" wire:model='sex'>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
                 </div>
-                <div>
-                    <label for="bio" class="form-label">Bio</label>
-                    <textarea class="form-control" id="bio" wire:model='bio'>{{ $bio }}</textarea>
+                <div class="mb-3 row">
+                    <label for="bio" class="col-form-label col-1">Bio</label>
+                    <div class="col-11">
+                        <textarea class="form-control" id="bio" wire:model='bio'>{{ $bio }}</textarea>
+                    </div>
+                    
                 </div>
-                <div>
-                    <label for="sex" class="form-label">Birthday</label>
-                    <input type="date" name="birthday" id="birthday" class="form-control" wire:model='birthday'>
+                <div class="mb-3 row">
+                    <label for="birthday" class="col-form-label col-1">Birthday</label>
+                    <div class="col-11">
+                        <input type="date" name="birthday" id="birthday" class="form-control" wire:model='birthday'>
+                    </div>
                 </div>
         
-        
-                <div class="flex items-center gap-4">
-                    <x-primary-button>{{ __('Save') }}</x-primary-button>
+            
+                <div class="d-flex mt-5">
+                    <button class="btn btn-dark" wire:click='updateUserDetails'>Save</button>
                 </div>
-            </form>
+
         
         
         </section>
