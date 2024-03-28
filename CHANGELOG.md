@@ -1,6 +1,41 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/laravel/compare/v0.5...main)
+## [Unreleased](https://github.com/laravel/laravel/compare/v0.6...main)
+
+## [v0.6](https://github.com/laravel/laravel/compare/v0.5...v0.6) - 2024-03-28
+
+### Karu OS Version 0.6 Release Notes
+
+Release Date: March 28, 2024
+
+### Task Management Overhaul:
+
+**Introduction of Task Boards:**
+
+- Task lists have been replaced with customizable task boards, offering users greater flexibility and organization in managing tasks. These boards are independent of projects and can be tailored to suit individual needs.
+- Each task board can be personalized with a distinct color and title, enhancing visual organization and clarity.
+- Additional Task Attributes: Tasks now include due dates, priorities, and statuses.
+- Expanded Status Options: Tasks can now be classified into four statuses: not started, in progress, completed, and cancelled, providing users with more comprehensive tracking capabilities.
+
+**Gallery Improvements:**
+
+- Dropdown Form Integration:
+  
+- The gallery interface has been updated to feature a dropdown form instead of modal dialogs, improving accessibility and user interaction.
+  
+- View Count Display:
+  
+- Each image now includes the number of views it has received, allowing users to gauge image popularity and engagement.
+  
+
+Design Improvements:**
+
+- The settings page has been refined and enhanced for improved usability and aesthetics.
+- General Updates:
+
+**Overall Design Adjustments:**
+
+- Various design adjustments have been made throughout the platform to enhance user experience and visual coherence.
 
 ## [v0.5](https://github.com/laravel/laravel/compare/v0.4...v0.5) - 2024-03-23
 
