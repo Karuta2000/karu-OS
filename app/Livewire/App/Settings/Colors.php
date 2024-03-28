@@ -13,6 +13,8 @@ class Colors extends Component
     public $hex;
     public $dark;
 
+    protected $listeners = ['colorsUpdated' => '$refresh'];
+
     public function render()
     {
         return view('livewire.app.settings.colors');

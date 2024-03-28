@@ -51,7 +51,7 @@ new class extends Component {
 
             <div class="d-flex p-0 h5 m-0">
                 <div class="flex-grow-1">
-                    {{ $board->title }}
+                    {{ $board->title }} <span class="badge rounded-pill text-bg-light">{{ $board->tasks->count() }}</span>
                 </div>
                 <div>
                     <div class="dropdown">

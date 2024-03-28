@@ -6,6 +6,9 @@
             <li class="nav-item">
                 <a class="nav-link {{ $page == "colors" ? "active" : "" }}" href="#" aria-current="page" wire:click='setPage("colors")'>Colors</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link disabled {{ $page == "links" ? "active" : "" }}" href="#" aria-current="page" wire:click='setPage("links")'>Links</a>
+            </li>
         </ul>
     </div>
     
