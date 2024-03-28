@@ -11,6 +11,9 @@
 
 .avatar {
     position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     bottom: -120px; /* Adjust this value to position the avatar properly */
     width: 360px; /* Adjust the size of the avatar */
     height: 360px; /* Adjust the size of the avatar */

@@ -1,6 +1,6 @@
 <div>
     <div class="profile-banner w-100 " style="background-image: url('{{ Auth::user()->cover }}')">
-        <img src="{{ Auth::user()->avatar }}" class="avatar shadow" alt="Avatar">
+        <div class="avatar shadow" style="background-image: url('{{ Auth::user()->avatar }}')"></div>
         
     </div>
     <div class="profile-content bg-light">
